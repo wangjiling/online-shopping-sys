@@ -1,0 +1,21 @@
+extends layout
+
+block append scripts
+  script(src='/vendor/three.js')
+
+block prepend scripts
+  script(src='/vendor/two.js')
+
+
+block content
+    h1= title
+    p Welcome to anti spider #{title}
+    p Spider name is
+        | #{title}
+    - var html = "<script></script>"
+        | #{html}
+
+    li.first: a(href='#') foo
+    li: a(href='#') bar
+    li.last: a(href='#') baz
+

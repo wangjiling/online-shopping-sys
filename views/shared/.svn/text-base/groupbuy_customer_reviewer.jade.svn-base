@@ -1,0 +1,44 @@
+
+div.customer
+    div.title
+        h3  Customer Reviewer (497)
+        span
+            a(href="#Action")   write a review
+    div(class="review cf")
+        div(class="review-cont cf")
+            div.cf
+                div.photo
+                    img(src="#{contextPath}/pics/13.jpg")
+                div.cont
+                    div.theme
+                        a(href="#Action")   Discount A/V
+                    div.time    10/01/2011
+                    div.detail
+                        p
+                        |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis
+                        metus eu turpis molestie mattis. Nam felis tortor, commodo nec scelerisque sed, venenatis nec
+                        quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos.
+            div.author
+                p
+                    span    Written by:
+                    |Jean Smith - New York, NY
+
+        div.paging
+            div.cf
+                span.sp1    &lt;&lt;Previous
+                span.sp2    |
+                span.sp2    Page:
+                span.sp2    1
+                a(href="#Action")   2
+                a(href="#Action")   3
+                a(href="#Action")   ...
+                span.sp2    |
+                a(href="#Action")   Next&gt;&gt;
+
+
+
+
+
+
+

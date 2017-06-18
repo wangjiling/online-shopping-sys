@@ -1,0 +1,33 @@
+function UserInformation(){
+    this.userid = -1;
+    this.email = "";
+    this.username = "";
+    this.rewardPoints = 0;
+    this.getForm = function(actionUrl){
+        var form = document.createElement('form');
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', actionUrl);
+        form.setAttribute('name', 'frm_ajax');
+        return form;
+    }
+
+    this.loadUserInfo = function(callback){
+        try{
+            var form = this.getForm(getURI('/usercenter/ajax/user_profile'));
+            ajaxRequest(form,
+                function(data) {
+                    if (data) {
+                        this.userid = data.id;
+                        this.rewardPoints = data.rewardPoints;
+                        this.email = data.email;
+                        this.username = data.userName;
+                        this.email = data.email;
+                        callback(this);
+                    }
+                }
+                , function() {
+
+                });
+        }catch(error){}
+    }
+}

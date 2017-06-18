@@ -1,0 +1,17 @@
+exports.sleep = function(milliSeconds){
+    var startTime = new Date().getTime();
+    while( new Date().getTime() < startTime + milliSeconds);
+}
+
+exports.whenUndefined = function(value, callback) {
+    if(value == undefined){
+        return callback(value);
+    }
+
+}
+
+exports.add = function(a, b){
+    return a + b;
+}
+
+

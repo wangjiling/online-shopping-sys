@@ -1,0 +1,57 @@
+div.hot-sell.cf.hid_template(name='div_top_recommend_deal')
+    h2
+        a(href="#Action",name='title')
+
+    div.info
+        div
+            a(href="#Action", name='major_img_link')
+                img(name='major_img')
+
+        p.cut
+            span.
+                Description:
+            em(name='description')
+
+    div.price
+        div.now-price
+            em
+                |$
+                span(name='now_price')
+
+            p.
+                *Limited Quantity
+
+        div.buy
+            a.buy-now(name='deal_purchase_a').
+                Buy Now
+
+        div.discount
+            dl
+                dt.
+                    Value
+                dd
+                    |$
+                    span(name='original_price')
+
+            dl
+                dt(name="deal_discount_type_desc").
+                    Discount:
+                dd(name="deal_discount_show_value")
+
+            dl
+                dt.
+                    Purchased
+                dd
+                    span(name='boughtCount')
+
+        div.time
+            p
+                |Time Left:
+                b
+                  span(name="remain_time_content")
+
+        div.about.cut
+            p
+                span.
+                    Business Description:
+                em(name='business_description')

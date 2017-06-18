@@ -1,0 +1,113 @@
+var isInitCartListBar = false;
+function loadShoppingCartCount() {
+    var form = getLoginCheckForm(getURI('/cart/ajax/count'));
+    ajaxRequest(form,
+            function(data) {
+                if (data.shoppingCartId) {
+                    $('[name=header_bar_shopping_cart_count]').html(data.itemsCount);
+                } else {
+                    $('[name=header_bar_shopping_cart_count]').html(0);
+                }
+            }
+            , function() {
+                $('[name=header_bar_shopping_cart_count]').html(0);
+            });
+}
+
+$(function() {
+
+    /*home-cart-box*/
+    $("[name=header_bar_cart_short_info]>a").hover(function() {
+        clearAndInitCartListBar();
+        if ($("[name=header_bar_shopping_cart_count]").text() != 0) {
+            $(this).addClass("cart-hover");
+            $("#header_bar_shopping_cart_items_div").show();
+        }
+    }, function() {
+        $(this).removeClass("cart-hover");
+        $("#header_bar_shopping_cart_items_div").hide();
+    })
+
+    $("#header_bar_shopping_cart_items_div").hover(function() {
+        $("[name=header_bar_cart_short_info]>a").addClass("cart-hover");
+        $("#header_bar_shopping_cart_items_div").show();
+    }, function() {
+        $("[name=header_bar_cart_short_info]>a").removeClass("cart-hover");
+        $("#header_bar_shopping_cart_items_div").hide();
+    })
+
+    try {
+        initCartListBar();
+    } catch(error) {
+    }
+})
+
+
+function clearAndInitCartListBar() {
+    if (isInitCartListBar) {
+        return;
+    }
+    isInitCartListBar = true;
+    $("div[name=show_cart_item_div]").remove();
+    initCartListBar();
+}
+
+
+function initCartListBar() {
+
+    var tempForm = getActionForm(getURI('/cart/ajax/listCart'));
+    ajaxRequest(tempForm,
+            function(data) {
+                isInitCartListBar = false;
+                $("[name=header_bar_shopping_cart_total]").text(data.totalNowPriceStr);
+                var cartList = $('#header_bar_shopping_cart_items_div')[0];
+                var hid_template = $(cartList).find(".hid_template");
+                var totalItems = 0;
+                for (var i = 0; i < data.stores.length; i++) {
+                    var store = data.stores[i];
+                    var goodsList = store.goodsList;
+                    for (var j = 0; j < goodsList.length; j++) {
+
+                        totalItems++;
+                        var temp = hid_template.clone(true);
+                        var item = goodsList[j];
+                        temp.attr("name", "show_cart_item_div");
+                        temp.find("img").attr({"src":item.productImage,"alt":item.productName});
+                        temp.find("[name=product_name]").text(item.productName).attr({"title":item.productName,"href":getURI("/product?product_id=") + item.productId});
+                        temp.find("a[name=show_product]").attr("href", getURI("/product?product_id=") + item.productId);
+                        temp.find("span[name=nowPrice]").text(item.nowPriceStr);
+                        temp.find("em[name=count]").text(item.count);
+                        //for delete
+                        temp.find("a[name=delete]").click(function (event) {
+
+                            var curRecord = $(event.target).parents(".shop-cart-goods");
+                            var form = getActionForm(getURI("/cart/ajax/remove"));
+                            $("<input>", {type:"text",name:"shopping_item_id",value:item.shoppingItemId}).appendTo($(form));
+                            $("<input>", {type:"text",name:"item_count",value:item.count}).appendTo($(form));
+                            $("<input>", {type:"text",name:"product_id",value:item.productId}).appendTo($(form));
+                            $("<input>", {type:"text",name:"shopping_cart_id",value:item.shoppingCartId}).appendTo($(form));
+                            ajaxRequest(form,
+                                    function(data) {
+                                        if (data) {
+                                            alert("Remove failure!");
+                                        } else {
+                                            curRecord.remove();
+//                                    loadShoppingCartCount();
+//                                    isShoppingCartEmpty();
+                                        }
+                                    }
+                                    , function() {
+                                    });
+                        });
+                        temp.removeClass('hid_template');
+                        temp.insertAfter(hid_template);
+                    }
+                }
+                $("[name=header_bar_shopping_cart_count]").text(totalItems);
+                $("[name=header_bar_shopping_cart_items]").text(totalItems);
+            }, function() {
+                isInitCartListBar = false;
+            }
+            );
+
+}

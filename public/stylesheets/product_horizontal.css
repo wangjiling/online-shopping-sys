@@ -1,0 +1,80 @@
+.search-h .title{
+    height: 50px;
+    background: url(../images/search-t-bg.png) repeat-x scroll 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    line-height: 50px;
+}
+.search-h .title h2{
+    float: left;
+    font-size: 26px;
+    margin: 0 10px;
+}
+.search-h .title span{
+    float: left;
+    font-size: 14px;
+}
+.search-h>div{
+    border-bottom: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+}
+.search-h .result ul li{
+    float: left;
+    margin: 10px 12px;
+    width: 170px;
+}
+.search-h .result ul li .pic{
+    padding: 10px;
+    background: url(../images/img-bg2.png) no-repeat scroll 0 0;
+    width:155px;
+    height:155px;
+    overflow:hidden;
+}
+.search-h .result ul li .pic img{
+    width: 150px;
+    height: 150px;
+}
+.search-h .result ul li .text{
+    font-size: 14px;
+    font-weight: 700;
+}
+.search-h .result ul li .text a{
+    color: #333333;
+    display: block;
+    height: 38px;
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.search-h .result ul li .purchase{
+    padding: 0 20px;
+    text-align: center;
+}
+.search-h .result ul li .text span{
+    color: red;
+    display: block;
+    text-align: center;
+}
+.search-h .result ul li .purchase a{
+    display: block;
+    width: 126px;
+    height: 30px;
+    text-indent: -999em;
+    background: url(../images/purchase-bt-bg.png) no-repeat scroll 0 0;
+    overflow:hidden;
+}
+.search-h .result ul li .purchase .a-deal{
+    background-position: 0 -32px;
+}
+.search-h .result ul li .purchase .a-store{
+    background-position: 0 -64px;
+    margin-top: 20px;
+}
+

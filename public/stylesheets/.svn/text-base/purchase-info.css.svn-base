@@ -1,0 +1,208 @@
+.deal-confirmation{}
+.deal-confirmation .deal-container{
+    float: left;
+    width: 710px;
+}
+.deal-confirmation .deal-container .your-purchase{
+    margin-bottom: 20px;
+    background-color: white;
+}
+.deal-confirmation .deal-container .your-purchase .hd,.deal-confirmation .deal-container .Payment .hd{
+    border-bottom: 1px solid #65C8DF;
+}
+.deal-confirmation .deal-container .your-purchase .hd h2,.deal-confirmation .deal-container .Payment .hd h2{
+    font-size: 30px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.deal-confirmation .deal-container .your-purchase .bd,.deal-confirmation .deal-container .Payment .bd{
+    margin-top: 10px;
+}
+.deal-confirmation .deal-container .your-purchase .bd table{
+    width: 100%;
+}
+.deal-confirmation .deal-container .your-purchase .bd table th{
+    font-size: 14px;
+    line-height: 28px;
+}
+.deal-confirmation .deal-container .your-purchase .bd table td{
+    text-align: center;
+}
+.deal-confirmation .deal-container .your-purchase .bd table .tr1{
+    font-size: 14px;
+    font-weight: 700;
+}
+.deal-confirmation .deal-container .your-purchase .bd table .td1{
+    text-align: left;
+    padding-left: 10px;
+}
+.deal-confirmation .deal-container .your-purchase .bd table .td1 p{
+    line-height: 28px;
+}
+.deal-confirmation .deal-container .your-purchase .bd table .td1 a{
+    font-size: 12px;
+    background: url(../images/gift-l.gif) no-repeat scroll 0 0;
+    line-height: 17px;
+    padding-left: 20px;
+    float: left;
+}
+.deal-confirmation .deal-container .your-purchase .bd table input[type="text"]{
+    width: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+.deal-confirmation .deal-container .your-purchase .bd table tfoot .td1{
+    padding-top:35px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.deal-confirmation .deal-container .your-purchase .bd table tfoot .tr2{
+    background-color: #CFEEF5;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 700;
+}
+.deal-confirmation .deal-container .your-purchase .bd table tfoot .tr2 td{
+    text-align: right;
+    padding: 15px 0;
+}
+.deal-confirmation .deal-container .your-purchase .bd table tfoot .tr2 span{
+    width: 200px;
+    padding-right: 10px;
+    display: inline-block;
+}
+.deal-confirmation .deal-container .Payment .error-msg-span{
+    color: red;
+    float: left;
+    margin-left: 20px;
+}
+.deal-confirmation .deal-container .Payment .bd input{
+    float: left;
+}
+.deal-confirmation .deal-container .Payment .bd .input1{
+    width: 252px;
+}
+.deal-confirmation .deal-container .Payment .bd .input2{
+    width: 172px;
+}
+.deal-confirmation .deal-container .Payment .bd .input3{
+    width: 52px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl{
+    padding: 20px 10px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information{
+    float: left;
+    width: 360px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information p span,.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .g-from p span{
+    display: block;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information p,.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .g-from p{
+    float: left;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 10px 0 0;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information p{
+    width: 100%;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information p button{
+    float: left;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-information h3{
+    font-size: 18px;
+    line-height: 30px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login{
+    float: right;
+    width: 290px;
+    background-color:#DDEACF;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    padding: 10px 10px 20px 10px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign{
+    text-align: center;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign h3,.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from h3{
+    font-size: 18px;
+    line-height: 36px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign p{
+    font-size: 12px;
+    line-height: 24px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from{
+    display: none;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from div{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from input[type="text"],.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from input[type="password"]{
+    width:182px;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from div lable{
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+}
+.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from div .cancle{
+    margin-left: 10px;
+    line-height: 32px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl{
+    padding: 20px 0;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-hd{
+    border-bottom: 1px solid #65C8DF;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-hd h3{
+    font-size: 18px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd{
+    padding: 20px 10px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .g-from,.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .rule,.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .confirm{
+    margin-bottom: 20px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .g-from p{
+    width: 50%;
+    height:60px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .g-from p select{
+    height:24px;
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .confirm input,.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from div input[type="button"]{
+    background-color: #369EC1;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #80C1D8 2%, #369EC1);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border: 1px solid #369EC1;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1em;
+    padding: 7px 16px;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .confirm input:hover,.deal-confirmation .deal-container .Payment .bd .pl .pl-login .sign-from div input[type="button"]:hover{
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #69b6d1 2%, #369EC1);
+}
+.deal-confirmation .deal-container .Payment .bd .bl .bl-bd .confirm a{
+    margin-left: 32px;
+    line-height: 20px;
+}

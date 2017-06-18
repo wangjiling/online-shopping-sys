@@ -1,0 +1,161 @@
+$(document).ready(function() {
+    loadGroupbuyCouponList();
+    loadGroupbuyOrderList();
+    $('[name=btn_confirm_deal_order]').bind('click', function(event) {
+        confirmReceivedDealOrder(event);
+    })
+})
+var confirmReceivedDealOrder = function(event) {
+    var form = getOrderActionForm(getURI('/groupbuy/order/view_received_confirm'), event);
+    $('body')[0].appendChild(form);
+    form.submit();
+}
+function loadGroupbuyCouponList(willShowPage, lastShowPage) {
+    var myForm = getActionForm(getURI("/groupbuy/ajax/load_coupons"));
+    showGroupbuyCouponList(willShowPage, lastShowPage, myForm);
+}
+
+function showGroupbuyCouponList(willShowPage, lastShowPage, myForm) {
+    // Cleans old coupons.
+    var olderCoupons = $("[name=coupon_list]").find('tbody[name=coupon_item]');
+    for (var i = 0; olderCoupons != null && i < olderCoupons.length; i++) {
+        if (!$(olderCoupons[i]).hasClass('hid_template')) {
+            $(olderCoupons[i]).remove();
+        }
+    }
+    $(".paging").hide();
+    $('[name=coupon_list_part]').append("<div name='coupon_load_timer' class='m3-div' style='text-align: center; padding: 20px 0; height:100px;'><img style='border: none; width: 100px; height: 100px;' src=" + getURI('/static/images/ajax-loader.gif') + " alt='Loading...'></div> ");
+    appendPageInfoToForm(willShowPage, lastShowPage, myForm);
+    ajaxRequest(myForm,
+        function(data) {
+            if (data.showObject.couponList) {
+                var coupons = data.showObject.couponList;
+                var couponElem = $("[name=coupon_list]")[0];
+
+                for (var i = 0; i < coupons.length; i++) {
+                    var couponItemElem = $('tbody[name=coupon_item]').clone(true);
+                    var couponObj = coupons[i];
+                    couponItemElem.find('img[name=coupon_image]').attr({'src':couponObj.couponImage,'alt':couponObj.couponName});
+                    couponItemElem.find('p[name=coupon_name]').html(couponObj.couponName);
+                    couponItemElem.find('[name=product_url]').attr({'href':getURI('/groupbuy/deal?deal_id=' + couponObj.dealId),'title':couponObj.couponName});
+                    couponItemElem.find('input[name=coupon_id]').val(couponObj.couponId);
+                    couponItemElem.find('td[name=coupon_code]').html(couponObj.couponCode);
+                    couponItemElem.find('b[name=coupon_status]').html(couponObj.couponStatus);
+                    couponItemElem.find('td[name=purchase_date]').html(couponObj.purchaseDate);
+                    couponItemElem.find('td[name=expiration_date]').html(couponObj.expirationDate);
+                    if ((i + 1) % 2 == 0) {
+                        couponItemElem.addClass('even');
+                    }
+                    couponItemElem.removeClass('hid_template');
+                    couponElem.appendChild(couponItemElem[0]);
+                }
+                $('[name=coupon_load_timer]').hide();
+                $(".paging").show();
+                generatePaginationFoot(data, $('#coupon_list_page_area'), showGroupbuyCouponList, myForm);
+            }
+        }
+        , function() {
+            $('[name=coupon_load_timer]').hide();
+        });
+
+
+}
+
+function loadGroupbuyOrderList(willShowPage, lastShowPage) {
+    var myForm = getActionForm(getURI("/groupbuy/ajax/load_orders"));
+    showGroupbuyOrderList(willShowPage, lastShowPage, myForm);
+}
+
+function showGroupbuyOrderList(willShowPage, lastShowPage, myForm) {
+    // Cleans old orders.
+    var olderOrders = $("[name=order_list]").find('tbody.order_row');
+    for (var i = 0; olderOrders != null && i < olderOrders.length; i++) {
+        if (!$(olderOrders[i]).hasClass('hid_template')) {
+            $(olderOrders[i]).remove();
+        }
+    }
+    $(".paging").hide();
+    $('[name=order_list_part]').append("<div name='order_load_timer' class='m3-div' style='text-align: center; padding: 20px 0; height:100px;'><img style='border: none; width: 100px; height: 100px;' src=" + getURI('/static/images/ajax-loader.gif') + " alt='Loading...'></div> ");
+    appendPageInfoToForm(willShowPage, lastShowPage, myForm);
+    ajaxRequest(myForm,
+        function(data) {
+            if (data.showObject.dealOrderList) {
+                var orders = data.showObject.dealOrderList;
+                var orderRowTmp = $("[name=order_list]").find('tbody.hid_template').clone(true);
+                var orderItemTmp = orderRowTmp.find('tr.hid_template').clone(true);
+                var orderRow;
+                var orderItem;
+                var date;
+                var showOrderAction = false;
+                for (var i = 0; i < orders.length; i++) {
+                    var order = orders[i];
+                    // Input Order Information.
+                    orderRow = orderRowTmp.clone(true);
+                    orderRow.find("[name=order_number]").html(order.orderNumber);
+                    date = new Date(order.clinchDate);
+                    orderRow.find("[name=clinch_date]").html(date.pattern("yyyy-MM-dd hh:mm:ss"));
+                    orderRow.find('[name=order_id]').val(order.orderId);
+                    orderRow.find('[name=order_number]').val(order.orderNumber);
+                    orderRow.find('[name=paypal_id]').val(order.paypalId);
+
+                    // Input Item Information.
+                    orderItem = orderRow.find("[name=order_item]");
+
+                    orderItem.find('[name=product_image]').attr({'src':order.productImgUrl,'alt':order.productName});
+                    orderItem.find('[name=product_url]').attr({'href':getURI('/groupbuy/deal?deal_id=' + order.productId),'title':order.productName});
+                    orderItem.find('[name=product_name]').html(order.productName);
+                    orderItem.find('[name=product_summary]').html(order.productSummary);
+                    orderItem.find('[name=product_price]').html(order.nowPriceStr);
+                    orderItem.find('[name=product_count]').html(order.count);
+
+
+                    orderItem.find('[name=order_status]').html(order.orderStatusName);
+                    orderItem.find('[name=total_price]').html(order.totalPriceStr);
+//                    orderItem.find('[name=order_status_column]').attr('rowspan', 1);
+//                    orderItem.find('[name=total_price_column]').attr('rowspan', 1);
+
+//                    orderItem.removeClass('hid_template');
+//                    orderRow[0].appendChild(orderItem[0]);
+
+
+//                        // Show Cancel Button
+//                        if ("WaitingProcess" == order.orderStatusName || "UserModiftying" == order.orderStatusName) {
+//                            orderRow.find('[name=bt-cancel]').removeClass('hid_template');
+//                        } else {
+//                            orderRow.find('[name=bt-cancel]').addClass('hid_template');
+//                        }
+//
+//                        if ("WaitingPay" == order.orderStatusName) {
+//                            orderRow.find('[name=bt-buy]').removeClass('hid_template');
+//                        } else {
+//                            orderRow.find('[name=bt-buy]').addClass('hid_template');
+//                        }
+//
+                        if ("Delivering" == order.orderStatusName) {
+                            showOrderAction = true;
+                            orderRow.find('[name=btn_confirm_deal_order]').removeClass('hid_template');
+                        } else {
+                            showOrderAction = false;
+                            orderRow.find('[name=btn_confirm_deal_order]').addClass('hid_template');
+                        }
+//
+                    // Adds action buttons to the end of one order row.
+//                    var orderAction = orderRow.find("tr[name=order_deal_actions_section]");
+                    if(showOrderAction == false){
+                        orderRow.find("tr[name=order_deal_actions_section]").addClass('hid_template');
+                    }
+
+                    orderRow.removeClass('hid_template');
+                    orderRow.insertBefore("tfoot.order_list_foot");
+                }
+                $('[name=order_load_timer]').hide();
+                $(".paging").show();
+                generatePaginationFoot(data, $('#order_list_page_area'), showGroupbuyOrderList, myForm);
+            }
+        }
+        , function() {
+            $('[name=order_load_timer]').hide();
+        });
+
+
+}

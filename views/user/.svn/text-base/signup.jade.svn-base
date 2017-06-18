@@ -1,0 +1,65 @@
+extends ../layout
+
+block stylesheets
+    link(href='#{contextPath}/stylesheets/sign-up.css', rel='stylesheet', type='text/css')
+
+block scripts
+    script(src='#{contextPath}/javascripts/signup_page.js', language='javascript', type='text/javascript')
+    script(language='javascript', type='text/javascript').
+        $(document).ready(function() {
+            checkUserFormat();
+            checkFirstNameFormat();
+            checkLastNameFormat();
+            checkPhoneFormat();
+            checkEmailFormat();
+            checkPasswordIsEmpty();
+            checkRePasswordIsSame();
+        })
+
+block content
+    div.container
+        form#register_form(action='#{contextPath}/to_signup', method='post')
+            div.section
+                div.sign
+                    div.sign-t
+                        h2 Enter your Contact Information
+                    div.sign-m
+                        p.tl It's your typical registration - it's free and fairly simple to complete
+                        p
+                            span Name:
+                            input#register_username.txt(type='text', name='register_username')
+                            span#nameMsg
+                        p
+                            span First Name:
+                            input#register_first_name.txt(type='text', name='register_first_name')
+                            span#firstNameMsg
+                        p
+                            span Last Name:
+                            input#register_last_name.txt(type='text', name='register_last_name')
+                            span#lastNameMsg
+                        p
+                            span Sex:
+                            select#register_sex(name='register_sex')
+                                option(value='MALE') MALE
+                                option(value='FEMALE') FEMALE
+                            span#sexMsg
+                        p
+                            span Tel:
+                            input#register_phone.txt(type='text', name='register_phone')
+                            span#phoneMsg
+                        p.tl Enter your Email Address & Create a Password
+                        p
+                            span E-mail:
+                            input#register_email.txt(type='text', name='register_email')
+                            span#emailMsg
+                        p
+                            span Create Password:
+                            input#register_password.txt(type='password', name='register_password')
+                            span#pswMsg
+                        p
+                            span Re-enter Password:
+                            input#register_repsw.txt(type='password', name='register_repsw')
+                            span#rePswMsg
+                        div.submit
+                            button#btnReg.bt-creat Create My Account
+                    div.sign-b

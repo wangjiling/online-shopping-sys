@@ -1,0 +1,53 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/search_panel.js",language="javascript")
+    script(type="text/javascript",language="JavaScript").
+        $(document).ready(function() {
+            loadSearchPageTitle();
+        })
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/product_horizontal.css')
+
+block content
+    div.container
+        div.section
+            div.search-h
+                div.title
+                    h2 Search Results
+                    span (Product:favorites)
+                div.cf
+                    div.result.cf
+                        ul
+                            each product in dealInfo.showList
+                                li
+                                    div.pic
+                                        a(href="#{contextPath}/product/product_id=#{product.dealId}")
+                                            img(src="#{product.dealIcon}",alt="#{product.dealName}")
+                                    div.text
+                                        a.txt(href="#{contextPath}/product/product_id=#{product.dealId}", title="#{product.dealName})
+                                            #{product.dealName}
+                                        span $#{product.nowPrice}
+                                    div.purchase
+                                        a(href="#{contextPath}/product/product_id=#{product.dealId}", title="Purchase Now") Purchase Now
+                    div.paging
+                        div.cf.pagination-foot(id="deal_list_page_area")
+                            -if(dealInfo.showList.length > 0)
+                                -if(dealInfo.canLeftPage > 0)
+                                    - var previousPage = parseInt(dealInfo.willShowPage) - 1
+                                        a(href="#action",name="previousLink",willpage='#{previousPage}')
+                                            span.sp1 &lt;&lt;Previous
+                                        span.sp2 |
+                                        span.sp2 Page:
+                                        a(href="#action",name="previousPageLink")
+                                            span.sp2 #{previousPage}
+                                        span.sp2 #{dealInfo.willShowPage}
+                                        -if(dealInfo.canRightPage > 0)
+                                            - var nextPage = parseInt(dealInfo.willShowPage) + 1
+                                                a(href="#action",name="nextPageLink") #{nextPage}
+                                                a(href="#Action") ...
+                                                span.sp2 |
+                                                a(href="#action",name="nextLink",willpage='${nextPage}') Next

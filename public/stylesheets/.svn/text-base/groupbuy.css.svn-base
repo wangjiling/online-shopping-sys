@@ -1,0 +1,137 @@
+.g-radius {
+    border: 1px solid #c7c7c7;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.g-aside {
+    float: right;
+    width: 260px;
+}
+
+.g-aside .other {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0185C6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0185C6;
+    text-decoration: underline;
+}
+
+input[type="text"], input[type="password"], select {
+    border: 1px solid #CCCCCC;
+    height: 22px;
+    line-height: 22px;
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/*group buy locality*/
+.locality {
+    position: relative;
+    width:980px;
+    margin: 20px auto 0;
+}
+
+.locality .city {
+    position: absolute;
+    top: -72px;
+    left: 400px;
+}
+
+.locality .city>a{
+    display: block;
+}
+.locality .city>a:hover{
+    text-decoration: none;
+}
+
+.locality .city h2 {
+    font-size: 40px;
+    line-height: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px #797979;
+    cursor: pointer;
+    display: block;
+}
+.locality .city h2 a{
+    display: block;
+    padding: 10px;
+    color: #149CEB;
+}
+.locality .city h2 a:hover{
+    color: #149CEB;
+    text-decoration: none;
+}
+
+.locality .state {
+    display: none;
+    padding: 10px;
+}
+
+.locality .state .state-nav {
+    padding-bottom: 10px;
+}
+
+.locality .state .state-nav h3 {
+    float: left;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.locality .state .state-nav ul li {
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 4px;
+    padding: 5px;
+    cursor: pointer;
+}
+.locality .state .state-nav ul li:hover,.locality .state .state-nav ul .onhover {
+    color: white;
+    background-color: #149CEB;
+}
+
+.locality .state .state-nav .close {
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.locality .state .state-cont ul{
+    float: left;
+    padding: 10px;
+    display: none;
+}
+/*.locality .state .state-cont .state-m{*/
+    /*display: block;*/
+/*}*/
+.locality .state .state-cont ul li{
+    font-size: 12px;
+    padding: 3px 0;
+}
+.locality .state .state-cont ul li h4{
+    font-size: 14px;
+}
+.locality .state .state-cont ul li a{
+    display: block;
+    padding: 5px 0 5px 12px;
+    width: 135px;
+    margin: 1px 0 0 5px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.locality .state .state-cont ul li a:hover,.locality .state .state-cont ul .onhover a{
+    color: white;
+    background-color: #149CEB;
+}

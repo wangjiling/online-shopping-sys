@@ -1,0 +1,30 @@
+{
+    "shoppingCartId":"0154",
+    "stores":[
+        {
+            "storeId":"546",
+            "storeName":"lvy",
+            "shoppingCartId":"548",
+            "goodsList":[
+                {
+                    "shoppingItemId":"456",
+                    "shoppingCartId":"546",
+                    "productId":"36774",
+                    "productName":"iphone 4s",
+                    "productImage":"http://i3.hexunimg.cn/2011-12-28/136768672.jpg",
+                    "productSummary":"this is iphone 4s(white)",
+                    "marketPrice":"510.00",
+                    "offPercent":"0.0",
+                    "nowPrice":"499.99",
+                    "count":"499.99",
+                    "stock":"1997",
+                    "point":"49.99"
+                }
+            ],
+            "totalNowPrice":"502.99",
+            "totalCount":"512.23"
+        }
+    ],
+    "totalNowPrice":"522.36",
+    "totalCount":"552.99"
+}

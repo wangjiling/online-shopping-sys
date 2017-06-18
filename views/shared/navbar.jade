@@ -1,0 +1,8 @@
+div.navlinks
+    -if (#{session_user})
+        Hello, Welcome! |
+        a(href='#{contextPath}/logout') Sign out
+    -else
+        a(href='#{contextPath}/register') Register
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        a(href="#{contextPath}/login") Sign in

@@ -1,0 +1,45 @@
+doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+
+html(xmlns='http://www.w3.org/1999/xhtml')
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        title Sign in
+        //include ../shared/common_css
+
+    body
+        style.
+            body,dd{padding: 0;margin: 0;}
+            body
+            {
+                background-image:-moz-linear-gradient(top, #aaaaaa, #fff);
+                background-image:-webkit-linear-gradient(top,#aaaaaa, #fff);
+                background-image:-o-linear-gradient(top,#aaaaaa, #fff);
+                _background-image:none;
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#ffffff');
+                -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#ffffff')";
+                background-repeat: no-repeat;
+                background-color: #fff;
+            }
+            .section{width: 400px; margin: 0 auto;}
+            .existing p input[type=text],.existing p input[type=password]
+            {
+                width: 220px;
+            }
+        div.section
+            h2(style='text-align: center;') Sign in
+        div.section
+            form(action='#{contextPath}/antiSpider/to_login', method='post')
+                div.article.cf
+                    dl.existing
+                        dd
+                        dd
+                            p
+                                label(style='width: 110px; display:inline-block;') Email address:
+                                input(type='text', name='userName')
+                        dd
+                        dd
+                            p
+                                label(style='width: 110px; display:inline-block;') Password:
+                                input(type='password', name='password')
+                        dd
+                            input(type='submit', value='Sign in')

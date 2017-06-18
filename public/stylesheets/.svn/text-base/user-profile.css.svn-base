@@ -1,0 +1,50 @@
+.user-profile{
+    float: right;
+    width: 749px;
+}
+.user-profile h3{
+    background-image: -moz-linear-gradient(center top , #FBFBFB, #FFFFFF 100%);
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    font-size: 30px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.user-profile .info{
+    border-top: 3px solid #149CEB;
+    padding: 20px;
+}
+.user-profile .info .photo{
+    float: left;
+    width: 152px;
+}
+.user-profile .info .photo img{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ababab;
+    padding: 1px;
+}
+.user-profile .info .detail{
+    float: right;
+    width: 530px;
+    height: 152px;
+}
+.user-profile .info .detail p,.user-profile .info .description p{
+    font-size: 14px;
+    line-height: 2;
+}
+.user-profile .info .detail p span,.user-profile .info .description p span{
+    width: 120px;
+    display: inline-block;
+    font-weight: 700;
+}
+.user-profile .info .description{
+    float: left;
+    padding-top: 20px;
+}
+.user-profile .info .description p{
+    width: 45%;
+    padding-right: 10px;
+    float: left;
+}

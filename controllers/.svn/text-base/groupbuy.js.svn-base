@@ -1,0 +1,21 @@
+var product = require("../beans/deal").deal;
+
+var groupbuyBusiness = require("../business/groupbuy");
+
+var orderAction = require("../mockupdata/orderAction.json");
+
+exports.dealDetail = function(req, res,renderView){
+    var dealId = req.params.dealId;
+    var deal = groupbuyBusiness.getDealDetail({"dealId":dealId},null);
+
+
+    renderView(req,res, {
+        title: 'Deal Detail'
+        ,deal: deal
+        },'groupbuy/deal')
+}
+
+
+exports.viewConfirmAfterReceived = function(req, res, renderFun){
+    renderFun(req, res, {title:'Received Confirmation', orderAction: orderAction}, 'marketplace/dealorder_received_confirm');
+}

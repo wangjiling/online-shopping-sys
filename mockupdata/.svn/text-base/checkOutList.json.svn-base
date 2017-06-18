@@ -1,0 +1,31 @@
+{
+    "shoppingCartId":"0481",
+    "stores":[
+        {
+            "storeId":"007",
+            "storeName":"Mary",
+            "shoppingCartId":"0481",
+            "goodsList":[
+                {
+                    "shoppingItemId":"00151",
+                    "shoppingCartId":"0481",
+                    "productId":"0514",
+                    "productName":"Iphone4",
+                    "productImage":"http://i1.hexunimg.cn/2011-10-11/134077864.jpg",
+                    "productSummary":"this is ihpone",
+                    "marketPrice":"699.56",
+                    "offPercent":"1.2",
+                    "nowPrice":"599.99",
+                    "count":"600.00"
+                }
+            ],
+            "totalNowPrice":"600.00",
+            "shippingPrice":"9.99",
+            "totalCount":"609.99"
+
+        }
+    ],
+    "totalNowPrice":"600.00",
+    "totalShippingPrice":"9.99",
+    "totalCount":"609.99"
+}

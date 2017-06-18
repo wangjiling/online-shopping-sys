@@ -1,0 +1,25 @@
+var product = require("../beans/product").product;
+
+var productBusiness = require("../business/product");
+
+exports.index = function(req, res,renderView){
+    var productId = req.params.productId;
+    var product = productBusiness.getProductDetail({"productId":productId},null);
+
+
+//
+//    var productData = new product();
+//    productData.id = productId;
+//    productData.title = "cup";
+
+//    res.render('marketplace/product',{
+//        title: 'Product Detail'
+//        ,product: product
+//        })
+
+    renderView(req,res, {
+            title: 'Product Detail'
+            ,product: product
+        },'marketplace/product')
+
+}

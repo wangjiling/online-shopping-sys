@@ -1,0 +1,3 @@
+exports.antiSpiderLogin = function(req, res, renderFun){
+    renderFun(req, res, {contextPath:''}, 'user/antispider_login');
+}

@@ -1,0 +1,108 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/store_page.js", language="javascript" ,type="text/javascript")
+    script(type="text/javascript",language="JavaScript")
+        $(document).ready(function () {
+
+            loadStoreProducts();
+
+                /*
+                loadStoreTitle();
+                loadBasicInfo();
+                loadCategories();
+                initSearchProductByKeywords();
+                */
+        })
+
+
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/store.css', rel='stylesheet', type='text/css')
+
+block content
+
+
+    input(type="hidden" ,id="page_store_id" ,name="page_store_id" ,value="#{store.id}")
+    div.wrap-header
+        div.header
+
+    div.container
+        div.s-section
+            div(class="s-banner cf")
+                div.s-banner-pic
+                    a(href="#action")
+                        img(id="store_title_major_image", src="#{store.storeLogoImage}")
+                div.s-banner-txt(id="panel_basic_info")
+                    p.p1
+                        span    Store Rating:
+                        em.lbl_store_appraise
+                    p.p2
+                        em.lbl_store_introduction
+                    a.a1(href="#Action")    Add to favorite stores
+        div(class="s-section cf")
+            div.s-aside
+                div.s-a-c
+                    div.s-a-hd
+                        h2  Search Box
+                    div.s-a-bd
+                        div.bd-t
+                        div(class="bd-m cf")
+                            input.s-txt(type="text", name="search_keywords")
+                            button.bt-search(name="search_button")  Search
+                        div.bd-b
+                div.s-a-c
+                    div.s-a-hd
+                        h2  Category
+                    div.s-a-bd
+                        div.bd-t
+                        div.bd-m
+                            div(class="shop-l-mid1 cf")
+                                div.mid-hd
+                                    em  -
+                                    span    COLLECTION
+                                div.mid-bd
+                                    ul.panel_category_list
+                                        li(class="hid_template category_item")
+                                            input(type="hidden" ,class="hid_category_id" ,name="hid_category_id" ,value="")
+                                            input(type="hidden" ,class="hid_category_id" ,name="hid_category_path" ,value="")
+                                            a(class="lnk_category" ,href="#action")  Category Name
+                        div.bd-b
+            div.s-cont
+                div.s-ct
+                    div.s-ct-hd
+                        h2  Shop Menu
+                    div.s-ct-bd
+                        div.s-ct-bd-t
+                        div(class="s-ct-bd-m cf")
+                            ul.all_products_summary_list(id="all_products_summary_list")
+                                li(class="hid_template product_thumbnail")
+                                    a.lnk_product_image(href="#action")
+                                        img.product_major_image
+                                    a.lnk_product_name(href="#action")
+                                        p.product_name
+                                    span    $
+                                        p(class="product_now_price in_line")
+                        div.s-ct-bd-b
+
+                        div.paging
+                            div.cf(id="product_list_page_area")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

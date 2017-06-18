@@ -1,0 +1,72 @@
+.deal-choices{
+    float: left;
+    width: 710px;
+    background-color: white;
+}
+.deal-choices h2{
+    font-size: 30px;
+    line-height: 50px;
+    border-bottom: 1px solid #65C8DF;
+    padding-left: 10px;
+}
+.deal-choices table{
+    width: 100%;
+    margin: 20px 0;
+}
+.deal-choices table tr:hover{
+    background: #fdf8e3;
+}
+.deal-choices table .even{
+    background-color: #F0F2F1;
+}
+.deal-choices table td{
+    padding: 5px 0;
+}
+.deal-choices table .description{
+    padding-left: 10px;
+}
+.deal-choices table .description a{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.deal-choices table .description p{
+    font-size: 12px;
+    color: #666666;
+}
+.deal-choices table .status p{
+    font-size: 14px;
+    line-height: 20px;
+}
+.deal-choices table .purchase{
+    text-align: center;
+}
+.deal-choices table .purchase a{
+    border-left: 2px solid #CCCCCC;
+    background: url(../images/choices-a-bg.png) no-repeat scroll 0 0;
+    margin: 0 auto;
+    width: 75px;
+    height: 34px;
+    line-height: 34px;
+    color: white;
+    font-size: 14px;
+    display: block;
+}
+.deal-choices table .purchase a:hover{
+    text-decoration: none;
+}
+.deal-choices table .purchase a span{
+    font-weight: 700;
+}
+.deal-choices table .sold-out{
+    color: #999999;
+}
+.deal-choices table .sold-out a{
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    opacity: 0.4;
+}
+.deal-choices table .sold-out .st{
+    color: #ff0000;
+    font-weight: 700;
+}

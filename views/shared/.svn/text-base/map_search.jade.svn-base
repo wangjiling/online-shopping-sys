@@ -1,0 +1,34 @@
+div.maps
+    input(type="hidden",name="deals_date",value="")
+    input(type="hidden",name="deals_country",value="US")
+    input(type="hidden",name="deals_state",value="MA")
+    input(type="hidden",name="deals_city",value="Boston")
+    input(type="hidden",name="deals_zipcode",value="02109")
+
+    div.title
+        h3.
+            Local Offers
+
+        p.
+            Browse local offer or check out what's going on anywhere in the country.
+
+    div.local(id="map_search",name="map_search")
+
+    <!-- Location Search Controller -->
+    div.div_loc_setting(index=3,style="margin: 5px;")
+        span(style="margin: 5px;")
+            span
+                b.
+                    State:
+            select(name="sel_state")
+                include us_states_with_capital
+
+
+        span.hid_template(style="margin: 5px 5px 5px 10px;")
+            span
+                b.
+                    Zipcode:
+            input(name="input_zipcode",type="text",value="",size="5")
+
+        span(style="margin: 5px 5px 5px 5px;")
+            input(name="btn_loc_search",type="button",value="Go")

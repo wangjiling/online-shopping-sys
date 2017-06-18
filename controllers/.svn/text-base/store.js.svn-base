@@ -1,0 +1,29 @@
+var store = require("../beans/store");
+var storeProducts = require("../mockupdata/storeProducts.json");
+
+var storeBusiness = require("../business/store");
+
+exports.getProductsByStoreId = function(req, res,renderFun){
+    renderFun(req, res, storeProducts);
+}
+exports.index = function(req, res,renderView){
+    var storeId = req.params.storeId;
+    var store = storeBusiness.getStoreInfo({"storeId":storeId},null);
+
+
+//
+//    var storeData = new store();
+//    storeData.id = storeId;
+//    storeData.title = "cup";
+
+    res.render('marketplace/store',{
+        title: 'Store Info'
+        ,store: store
+        })
+
+//    renderView(req,res, {
+//        title: 'store Detail'
+//        ,store: JSON.stringify(store)
+//        },'store/store')
+//
+}

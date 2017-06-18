@@ -1,0 +1,21 @@
+ul
+    -if (OnTab != "HOME")
+        li.tab
+            a(href="#{contextPath}/home") Home
+    -else
+        li.on.tab
+            a(href="#{contextPath}/home") Home
+
+    -if (OnTab != "PROFILE")
+        li.tab
+            a(href="#{contextPath}/profile") Profile
+    -else
+        li.on.tab
+            a(href="#{contextPath}/profile") Profile
+
+    -if (OnTab != "STOREFRONT")
+        li.tab
+            a(href="#{contextPath}/storeFront") &nbsp;Store Front&nbsp;
+    -else
+        li.on.tab
+            a(href="#{contextPath}/storeFront") &nbsp;Store Front&nbsp;

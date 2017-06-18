@@ -1,0 +1,37 @@
+div.user-profile.g-radius
+    h3 User Profile
+    div#user_profile_panel.info.cf
+        div.photo
+            a(href="#{contextPath}/profile/edit/#{user.userId}")
+                -if(user.photo){
+                    a
+                        img(src="#{contextPath}#{user.photo}",imgUploaded="true", alt = "The image of user")
+                -}else{
+                    a
+                        img(src='#{contextPath}/pics/ren.png',imgUploaded="false")
+                -}
+        div.detail
+            p
+                span Name:
+                em #{user.userName}
+            p
+                span Sex:
+                em #{user.sex}
+            p
+                span Email:
+                em #{user.email}
+            p
+                span Reward Points :
+                em(name='reward_points')#{user.point}
+        div.information
+            p
+                span Created :
+                em(name='created')#{user.createDate}
+            p
+                span Login Number :
+                em(name='loginNum')#{user.loginNumber}
+            p.Signature
+                span Personalized Signature :
+                em #{user.signature}
+        div.action
+            a.button-green(href="#{contextPath}/usercenter/profileEdit",name="editBt") Edit

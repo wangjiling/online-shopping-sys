@@ -1,0 +1,47 @@
+div.user-profile.g-radius
+    h3 Edit Profile
+    div#user_profile_panel.info.cf
+        div.restaurantForm
+            form.forms#restaurantEdit(method="post", name="profileEdit", action="#{contextPath}/profile/edit")
+                -if(user.photo){
+                    input(type="hidden", name="image", value="#{user.photo}")
+                -}else{
+                    input(type="hidden", name="image", value="#{contextPath}/pics/ren.png")
+                -}
+                input(type="hidden", name="userId", value="#{user.userId}")
+                div.name
+                    label.title Name:
+                    input(type="text", name ="userName" , value = "#{user.userName}")
+                div.sex
+                    label.title Sex:
+                    select#register_sex(name='sex')
+                        option(value='male') MALE
+                        option(value='female') FEMALE
+                div.logo
+                    label.title Photo:
+                                                                            //            a
+                                                                            //                img(src="#{restaurant.storeLogo}")
+                                                                            //            input(type="button" , value = "Browse")
+                    div.photos.cf
+                        div.imgs
+                            -if(user.photo){
+                                a
+                                    img(src="#{contextPath}#{user.photo}",imgUploaded="true", alt = "The image of user")
+                            -}else{
+                                a
+                                    img(src='#{contextPath}/pics/ren.png',imgUploaded="false")
+                            -}
+                        input.add-photo#addPhoto(type="button" , value = "Browse")
+                div.email
+                    label.title Email:
+                    input(type="text", name ="email" , value = "#{user.email}")
+                div.description
+                    label.title Personalized Signature:
+                    textarea(name = "signature") #{user.signature}
+                div.action.cf
+                    a.button-green(name="profileEditSave") Save
+                    a.button-gray(href="#{contextPath}/usercenter/user_profile") Back
+    div.dialog
+        div.close
+        div.uploadImage
+            iframe(src='#{contextPath}/uploadImage', width=500,height=260)

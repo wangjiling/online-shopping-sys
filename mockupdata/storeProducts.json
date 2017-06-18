@@ -1,0 +1,28 @@
+{
+    "title": "cup store"
+    ,"description": "We blend that tea by mixing chamomile with pekoe."
+    ,"image": "/pics/3.jpg"
+    ,"canLeftPage": 1
+    ,"willShowPage": 5
+    ,"canRightPage": 1
+    ,"showList":[
+        {
+            "title":"cup1",
+            "majorImage":"/pics/3.jpg",
+            "name":"cup1",
+            "productId":"123",
+            "nowPriceStr":"10.90",
+            "title":"cup1",
+            "desc":"desc"
+
+        },{
+            "title":"cup2",
+            "majorImage":"/pics/4.jpg",
+            "name":"cup2",
+            "productId":"223",
+            "nowPriceStr":"20.90",
+            "title":"cup2",
+            "desc":"desc"
+        }
+    ]
+}

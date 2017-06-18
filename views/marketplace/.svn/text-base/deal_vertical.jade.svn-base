@@ -1,0 +1,30 @@
+extends ../layout
+
+block scripts
+    // add scripts
+
+block stylesheets
+    // add style sheets
+
+block content
+    div.container
+        div.section
+            div.product-list
+            div.list-r
+                div.list-r-hd
+                div.list-r-bd
+                    div.list-r-bd1
+                        ul
+                            each deal in dealInfo.showList
+                                li
+                                    div.pic
+                                        a(href="#{contextPath}/groupbuy/deal/deal_id=#{deal.dealId}")
+                                            img(src="#{deal.dealIcon}",alt="#{deal.dealName}")
+                                    div.text
+                                        a.txt(href="#{contextPath}/groupbuy/deal/deal_id=#{deal.dealId}", title="#{deal.dealName}")
+                                            #{deal.dealName}
+                                        span $#{deal.nowPrice}
+                                    div.purchase
+                                        a.a-deal(href="#{contextPath}/groupbuy/deal/deal_id=#{deal.dealId}",title="View Deal") View Deal
+                div.list-r-ft
+

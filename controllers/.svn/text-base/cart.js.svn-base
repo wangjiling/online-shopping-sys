@@ -1,0 +1,5 @@
+var shoppingCartList = require("../mockupdata/shoppingCartList.json");
+
+exports.listCart = function(req, res, renderFun){
+    renderFun(req, res, {title:'My shopping cart', shoppingCartList: shoppingCartList}, 'marketplace/cart_list');
+}

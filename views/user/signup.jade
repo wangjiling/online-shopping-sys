@@ -1,0 +1,51 @@
+extends ../layout
+
+block stylesheets
+    link(href='#{contextPath}/stylesheets/sign-up.css', rel='stylesheet', type='text/css')
+
+block scripts
+    script(src='#{contextPath}/javascripts/signup_page.js', language='javascript', type='text/javascript')
+    script(language='javascript', type='text/javascript').
+        $(document).ready(function() {
+            checkUserFormat();
+            checkFirstNameFormat();
+            checkLastNameFormat();
+            checkPhoneFormat();
+            checkEmailFormat();
+            checkPasswordIsEmpty();
+            checkRePasswordIsSame();
+        })
+
+block content
+    div.container
+        form#register_form(action='#{contextPath}/signup', method='post')
+            div.section
+                div.sign
+                    div.sign-t
+                        h2 Enter your Contact Information
+                    div.sign-m
+                        p
+                            span Name:
+                            input#register_username.txt(type='text', name='userName')
+                            span#nameMsg
+                        p
+                            span Sex:
+                            select#register_sex(name='sex')
+                                option(value='male') MALE
+                                option(value='female') FEMALE
+                            span#sexMsg
+                        p
+                            span E-mail:
+                            input#register_email.txt(type='text', name='email')
+                            span#emailMsg
+                        p
+                            span Create Password:
+                            input#register_password.txt(type='password', name='password')
+                            span#pswMsg
+                        p
+                            span Confirm Password:
+                            input#register_repsw.txt(type='password', name='confirmPassword')
+                            span#rePswMsg
+                        div.submit
+                            button#btnReg.bt-creat Create My Account
+                    div.sign-b

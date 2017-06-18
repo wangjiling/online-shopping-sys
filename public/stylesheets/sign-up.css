@@ -1,0 +1,64 @@
+/*sign up--S*/
+/*sign up error*/
+label.error {
+    color: #FF0000;
+    font-size: 0.87em;
+    /*text-shadow: 0 0 2px #000000;*/
+}
+.container .section .sign {
+    border:1px solid #c7c7c7;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    background-color:white;
+    overflow:hidden;
+}
+
+.container .section .sign .sign-t {
+    height: 50px;
+    background: url("../images/search-t-bg.png") repeat-x scroll 0 0;
+}
+
+.container .section .sign .sign-t h2 {
+    font-size: 18px;
+    line-height: 55px;
+    margin-left: 10px;
+}
+
+.container .section .sign .sign-m {
+    padding: 10px;
+}
+
+.container .section .sign .sign-m p {
+    line-height: 42px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 40px;
+}
+
+.container .section .sign .sign-m p select{
+    margin-left:-4px;
+    border:1px solid #939494;
+}
+
+.container .section .sign .sign-m .tl {
+    color: #255a7a;
+    padding-left: 10px;
+}
+
+.container .section .sign .sign-m span {
+    width: 170px;
+    display: inline-block;
+}
+
+.container .section .sign .sign-m .txt {
+    width: 350px;
+    height: 20px;
+    border: 1px solid #939494;
+}
+
+.container .section .sign .sign-m .submit {
+    text-align: center;
+    height: 37px;
+    padding-top: 20px;
+}

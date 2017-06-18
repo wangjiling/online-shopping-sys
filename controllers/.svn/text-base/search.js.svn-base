@@ -1,0 +1,86 @@
+var pageInfo = require("../mockupdata/pageInfo.json");
+var dealInfo = require("../mockupdata/dealInfo.json");
+var mockSearchProduct = require('../mockupdata/searchProducts.json');
+var searchProductIcon = require('../mockupdata/searchProductIcon.json');
+
+/**
+ * Search by All
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.searchAll = function(req, res, renderFun){
+    if (req.params.layout == 'vertical') {
+        renderFun(req, res, {title:'Home store(horizontal)', pageInfo: pageInfo}, 'marketplace/all_search_vertical');
+    } else {
+        renderFun(req, res, {title:'Home store(horizontal)', pageInfo: pageInfo}, 'marketplace/all_search_horizontal');
+    }
+}
+
+/**
+ * Search by Deal
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.searchDeal = function(req, res, renderFun){
+    if (req.params.layout == 'vertical') {
+        renderFun(req, res, {title:'Deal(horizontal)', dealInfo: dealInfo}, 'marketplace/deal_vertical');
+    } else {
+        renderFun(req, res, {title:'Deal(horizontal)', dealInfo: dealInfo}, 'marketplace/deal_horizontal');
+    }
+}
+
+/**
+ * Search by product
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.searchProduct = function(req, res, renderFun){
+    if (req.params.layout == 'vertical') {
+        renderFun(req, res, {title:'Product(horizontal)', dealInfo: dealInfo}, 'marketplace/product_search_horizontal');
+    } else {
+        renderFun(req, res, {title:'Product(horizontal)', dealInfo: dealInfo}, 'marketplace/product_search_horizontal');
+    }
+}
+
+/**
+ * Search by Store
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.searchStore = function(req, res, renderFun){
+    if (req.params.layout == 'vertical') {
+        renderFun(req, res, {title:'Store(horizontal)', dealInfo: dealInfo}, 'marketplace/store_search_horizontal');
+    } else {
+        renderFun(req, res, {title:'Store(horizontal)', dealInfo: dealInfo}, 'marketplace/store_search_horizontal');
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.featureProducts = function(req, res, renderFun){
+    var cityName = req.params.city_name;
+
+    // using beans/product.js as bean
+    var products = mockSearchProduct;
+
+
+    renderFun(req, res, {products: products}, 'marketplace/deal_vertical');
+}
+
+/**
+ * Get Featured Products
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.searchProductIcon = function(req, res, renderFun){
+    renderFun(req, res, searchProductIcon);
+}

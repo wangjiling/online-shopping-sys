@@ -1,0 +1,260 @@
+$(function() {
+    $('input[name=btn_join_us]').click(function(e) {
+        location.href = getURI("/signup");
+    })
+
+    $('[name=lnk_local_search]').change(function(event) {
+        var cityName = $(event.target).val();
+        loadLocalProduct(cityName);
+    })
+
+})
+
+function loadLocalProduct(cityName) {
+
+    var form = getFormLocalProductSearch(getURI('/search/ajax/featured_products'), cityName);
+    ajaxRequest(form,
+            function(data) {
+                var productUl = $('#local_products_list')[0];
+                var productTemplate = $(productUl).find('li.hid_template').clone(true);
+                productUl.innerHTML = "";
+                productUl.appendChild(productTemplate[0]);
+
+                var i = 0;
+                for (var i = 0;
+                     i < data.length;
+                     i++) {
+
+                    var productLi = $('li.product_thumbnail').clone(true);
+                    var productObj = data[i];
+                    productLi.find('img.product_major_image').attr({'src':productObj.majorImage,'alt':productObj.name});
+                    productLi.find('a.lnk_product_image').attr({'href':getURI("/product/product_id=") + productObj.productId});
+                    productLi.find('a.lnk_product_name').attr({'href':getURI("/product/product_id=") + productObj.productId,'title':productObj.name});
+                    productLi.find('p.product_name').html(productObj.name);
+                    productLi.find('p.product_now_price').html(productObj.nowPrice);
+                    productLi.removeClass('hid_template');
+                    productUl.appendChild(productLi[0]);
+                }
+
+            }
+            , function() {
+            });
+}
+
+function getFormLocalProductSearch(actionUrl, cityName) {
+    var hidCategoryPath = document.createElement('input');
+    $(hidCategoryPath).attr('type', 'hidden');
+    $(hidCategoryPath).attr('name', 'city_name');
+    $(hidCategoryPath).val(cityName);
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', actionUrl);
+    form.setAttribute('name', 'frm_ajax');
+    form.appendChild(hidCategoryPath);
+
+    return form;
+}
+
+$(document).ready(function() {
+    try {
+        loadLocalProduct("Boston");
+    } catch(error) {
+    }
+
+    try {
+        loadHotSaleProduct();
+    } catch(error) {
+    }
+
+    try {
+        loadHomeTopDeal();
+    } catch(error) {
+    }
+
+})
+
+function loadHotSaleProduct() {
+    var form = getForm(getURI('/home/ajax/load_hot_sale'));
+    ajaxRequest(form,
+            function(data) {
+                if (data.length < 1) {
+                    return;
+                }
+//                var hotSaleElem = $('#hot_sale')[0];
+//
+//                var hotSaleTitle = $('#hot_sale_title').clone(true);
+//                hotSaleTitle.removeClass('hid_template');
+//                hotSaleElem.appendChild(hotSaleTitle[0]);
+//
+//                var hotSaleBody = $('#hot_sale_body').clone(true);
+//                hotSaleBody.removeClass('hid_template');
+
+
+                var productUl = $('#hot_sale_list')[0];
+                var productTemplate = $(productUl).find('li.hid_template').clone(true);
+                productUl.innerHTML = "";
+                productUl.appendChild(productTemplate[0]);
+
+                var i = 0;
+                for (var i = 0;
+                     i < data.length;
+                     i++
+                        ) {
+                    var productLi = $('li[name=hot_sale_item]').clone(true);
+                    var productObj = data[i];
+                    productLi.find('.hot_sale_item_image').attr({'src':productObj.majorImage,'alt':productObj.name});
+                    productLi.find('.lnk_hot_sale_item_image').attr({'href':getURI("/product/product_id=") + productObj.productId});
+                    productLi.find('.lnk_hot_sale_item_name').attr({'href':getURI("/product/product_id=") + productObj.productId,'title':productObj.name});
+//                    productLi.find('a.lnk_hot_sale_item_image').attr({'href':getURI("") + productObj.storeURL});
+//                    productLi.find('a.lnk_hot_sale_item_name').attr({'href':getURI("") + productObj.storeURL,'title':productObj.name});
+                    productLi.find('.hot_sale_item_name').html(productObj.name);
+                    productLi.find('.hot_sale_item_price').html(productObj.marketPrice);
+                    productLi.find('[name=link_purchase_now]').attr({'href': getURI("/product/product_id=") + productObj.productId});
+
+                    productLi.removeClass('hid_template');
+                    productUl.appendChild(productLi[0]);
+                }
+
+                hotSaleBody[0].appendChild(productUl);
+                hotSaleElem.appendChild(hotSaleBody[0]);
+
+            }
+            , function() {
+            });
+}
+
+function getDealsRequestForm(actionUrl) {
+
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', actionUrl);
+    form.setAttribute('name', 'frm_ajax');
+
+    try {
+        var hidDealsDate = $('[name=deals_date]').clone(true);
+        hidDealsDate.attr('name', 'deals_date');
+        hidDealsDate.val((new Date()).getTime());
+        hidDealsDate = hidDealsDate[0];
+        form.appendChild(hidDealsDate);
+
+        var hidDealsCountry = $('[name=deals_country]').clone(true);
+        hidDealsCountry.attr('name', 'deals_country');
+        hidDealsCountry = hidDealsCountry[0];
+        form.appendChild(hidDealsCountry);
+
+        var hidDealsState = $('[name=deals_state]').clone(true);
+        hidDealsState.attr('name', 'deals_state');
+        hidDealsState = hidDealsState[0];
+        form.appendChild(hidDealsState);
+
+        var hidDealsCity = $('[name=deals_city]').clone(true);
+        hidDealsCity.attr('name', 'deals_city');
+        hidDealsCity = hidDealsCity[0];
+        form.appendChild(hidDealsCity);
+
+        var hidDealsZipCode = $('[name=deals_zipcode]').clone(true);
+        hidDealsZipCode.attr('name', 'deals_zipcode');
+        hidDealsZipCode = hidDealsZipCode[0];
+        form.appendChild(hidDealsZipCode);
+
+    } catch(error) {
+    }
+    return form;
+}
+
+function loadHomeTopDeal() {
+
+//    jQuery.ajax({
+//        type:"post",
+//        url: '/groupbuy/ajax/load_home_top_deal',
+//        data: null,
+//        success:function(data) {
+//            var dataObj;
+//            try {
+//                dataObj = eval('(' + data + ')');
+//                if (dataObj) {
+//                    alert(dataObj);
+//                }
+//            } catch(error) {
+//            }
+//
+//        },
+//        error:function(XMLHttpRequest, XMLHttpRequest, errorThrown) {
+//            funcFailed();
+//        }
+//    });
+
+
+    var form = getDealsRequestForm(getURI('/groupbuy/ajax/load_home_top_deal'));
+    ajaxRequest(form,
+            function(data) {
+                if (null == data || "" == data || data.dealId <= 0) {
+//                    $("[name=div_top_recommend_deal]").addClass('hid_template');
+                    return;
+                }
+                var topDealElem = $("[name=div_top_recommend_deal]");
+                topDealElem.removeClass('hid_template');
+                topDealElem.find('[name=title]').html(data.dealName);
+                topDealElem.find('[name=title]').attr('href', getURI("/groupbuy/deal?deal_id=") + data.dealId);
+                topDealElem.find("[name=deal_purchase_a]").attr("href", getURI('/groupbuy/purchase?deal_id=') + data.dealId);
+                topDealElem.find('img[name=major_img]').attr({'src':data.dealIcon,'alt':data.dealName});
+                topDealElem.find('[name=major_img_link]').attr({'href':getURI("/groupbuy/deal?deal_id=") + data.dealId});
+                topDealElem.find('[name=description]').html(data.dealDescription);
+                topDealElem.find('[name=now_price]').html(data.nowPrice);
+                topDealElem.find('[name=original_price]').html(data.originalPrice);
+
+//                topDealElem.find('[name=off_percent]').html(data.offPercent);
+                if (data.dealDiscountType == "discount") {
+                    topDealElem.find("[name=deal_discount_type_desc]").html("Discount:");
+                    topDealElem.find("[name=deal_discount_show_value]").html(data.disCount.formatDigit(0) + "%");
+                } else {
+                    topDealElem.find("[name=deal_discount_type_desc]").html("Save:");
+                    topDealElem.find("[name=deal_discount_show_value]").html("$" + (data.originalPrice - data.nowPrice).formatDigit(2));
+                }
+
+                topDealElem.find('[name=boughtCount]').html(data.boughtCount);
+
+
+                if (data.remainingTime > 1000) {
+                    $("[name=remain_time_content]").html(new Remain(data.remainingTime).toString());
+                    data.remainingTime = data.remainingTime - 1000;
+                } else {
+                    $("[name=remain_time_content]").html(" DEAL EXPIRED ");
+                }
+
+                var timer = new Timer();
+                timer.setFunction(function(timerObj) {
+                    if (timerObj.params >= 1000) {
+                        var remain = new Remain(timerObj.params);
+                        $("[name=remain_time_content]").html(remain.toString());
+                        timerObj.params = timerObj.params - 1000;
+                    } else {
+                        $("[name=remain_time_content]").html(" DEAL EXPIRED ");
+                    }
+                }, data.remainingTime, 1000, {cycle: true, runBeforeTimeout: false});
+                timer.start();
+
+
+//                topDealElem.find('[name=left_days]').html(1);
+//                topDealElem.find('[name=left_hours]').html(2);
+//                topDealElem.find('[name=left_mins]').html(3);
+                topDealElem.find('[name=business_description]').html(data.businessDescription);
+                topDealElem.find('[name=expiredDate]').val(data.expiredDate);
+                topDealElem.find('[name=upLimit]').val(data.upLimit);
+                topDealElem.find('[name=downLimit]').val(data.downLimit);
+                topDealElem.find('[name=dealStock]').val(data.dealStock);
+                topDealElem.find('[name=tippingPoint]').val(data.tippingPoint);
+                topDealElem.find('[name=minimumBoughtDate]').val(data.minimumBoughtDate);
+                topDealElem.find('[name=disCount]').val(data.disCount);
+                topDealElem.find('[name=saleOutFlag]').val(data.saleOutFlag);
+
+                topDealElem.find("[name=fb_share_title]").val(data.dealName);
+                topDealElem.find("[name=fb_share_summary]").val(data.dealDescription);
+                topDealElem.find("[name=fb_share_image]").val(data.dealIcon);
+            }
+            , function() {
+            });
+}
+
+
+

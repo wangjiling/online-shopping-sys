@@ -1,0 +1,26 @@
+div.footer.cf
+    div.footer-nav
+        a(href="#{contextPath}/inbuilding").
+            Who We Are
+        ||
+        a(href="#{contextPath}/inbuilding").
+            How it Works
+        ||
+        a(href="#{contextPath}/inbuilding").
+            Merchants
+        ||
+        a(href="#{contextPath}/inbuilding").
+            Contact Us
+        ||
+        a(href="#{contextPath}/inbuilding").
+            Help Center
+    .div.copyright
+        p
+            span.
+                &copy; 2011 YellConnect All Rights Reserved
+            a(href="#{contextPath}/inbuilding").
+                Privacy Policy
+            ||
+            a(href="#{contextPath}/inbuilding").
+                Conditions of Use
+

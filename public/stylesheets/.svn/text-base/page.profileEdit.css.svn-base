@@ -1,0 +1,22 @@
+.restaurantForm form > div{
+    padding: 20px;
+    position: relative;
+}
+.restaurantForm label.title{
+    display: block;
+}
+input[type="text"],textarea {
+    font: 400 1em/1.5 Arial,Helvetica,sans-serif;
+    width: 100%;
+}
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+}
+.logo .photos .imgs{
+    float: left;
+    max-width: 50%;
+}
+.logo input[type="button"]{
+    margin-left: 20px;
+}

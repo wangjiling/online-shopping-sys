@@ -1,0 +1,140 @@
+.hid_template{
+    display: none;
+}
+
+.in_line {
+    display:inline;
+}
+
+.container .section .error-inbuilding {
+    margin: 20px 0;
+    border: 1px solid #adadad;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.container .section .error-inbuilding .error-bd {
+    padding-top: 30px;
+    background: #edf6ff;
+}
+
+.container .section .error-inbuilding .error-bd .inbuilding {
+    width: 870px;
+    min-height:270px;
+    padding-bottom:20px;
+    margin: 0 auto;
+    background: url(../images/inbuilding.png) no-repeat scroll 0 0;
+}
+
+.container .section .error-inbuilding .error-bd .inbuilding h2 {
+    color: #FF0000;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 56px;
+    padding-left:280px;
+}
+
+
+.username{
+    font: bold 15px Ariel, Helvetica, sans-serif;
+    height: 28px;
+    line-height: 28px;
+}
+
+/*facebook share button*/
+.fb_share_button {
+    display: -moz-inline-block;
+    display:inline-block;
+    padding:1px 1px 0 15px;
+    height:15px;
+    border:1px solid #d8dfea;
+    background:url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top left;
+}
+.fb_share_button:hover {
+    color:#fff;
+    border-color:#295582;
+    background:#3b5998 url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top left;
+    text-decoration:none;
+}
+
+
+/*product image scroll*/
+.pic_chg_box_ss {
+    width: 300px;
+    height:64px;
+    border: 1px solid #adadad;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.pic_chg_box_prev em,.pic_chg_box_next em{
+    font-size: 30px;
+    width: 6px;
+    height: 23px;
+    margin: 13px 0 0 2px;
+    display: block;
+    overflow: hidden;
+}
+
+
+.pic_chg_box_next em{
+    text-indent: -9px;
+}
+
+.pic_chg_box_prev a,.pic_chg_box_next a{
+    float: left;
+    height: 50px;
+    width: 10px;
+    border: 1px solid #adadad;
+    line-height: 20px;
+    color: #333333;
+    display: block;
+    margin: 5px 7px;
+    text-decoration: none;
+}
+
+.pic_chg_box_prev a:hover,.pic_chg_box_next a:hover{
+    border: 1px solid #000000;
+    color:#333333;
+}
+
+.pic_chg_box_no a,.pic_chg_box_no a:hover{
+    border: 1px solid #adadad;
+    cursor: default;
+}
+
+.pic_in_area_div {
+    float: left;
+    width: 245px;
+    overflow: hidden;
+}
+
+.pic_in_area_ss {
+    width: 1000px;
+    /*position:absolute;*/
+}
+
+.pic_in_area_ss li {
+    float: left;
+    width: 50px;
+    height:50px;
+    margin: 5px;
+    border: 1px solid #A2A2A2;
+}
+
+.pic_in_area_ss li:hover{
+    border: 1px solid #ff9900;
+}
+
+.pic_in_area_ss li img {
+    width: 50px;
+    height: 50px;
+}
+
+.pic_in_area_ss .onhover{
+    border: 1px solid #ff9900;
+}
+
+

@@ -1,0 +1,12 @@
+{
+    "id":312
+    ,"title": "tea"
+    ,"regularPrice": "29.90"
+    ,"nowPrice": "19.90"
+    ,"description": "We blend that tea by mixing chamomile with pekoe."
+    ,"majorImage": "/pics/picture.jpg"
+    ,"storeId": 555
+    ,"storeLogo": "/pics/1.jpg"
+
+
+}

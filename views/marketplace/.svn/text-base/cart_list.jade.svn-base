@@ -1,0 +1,131 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/shopping_cart_page.js",language="javascript",type="text/javascript")
+    script(src="#{contextPath}/javascripts/check_cart_list_count.js",language="javascript",type="text/javascript")
+    script(type="text/javascript",language="JavaScript").
+        $(document).ready(function() {
+
+        })
+
+        $(function() {
+            check_cart_list_count();
+        })
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/cart-list.css', rel='stylesheet', type='text/css')
+
+
+block content
+    div.container
+        div.section
+            div.s-cart
+                h2 My Shopping Cart
+        div.section.cf
+            div.s-cart
+                div.s-cart-t
+                    h3 My selected items
+                div.s-cart-m
+                    -if(shoppingCartList.stores.length > 0)
+
+                        table(border="0", align="center", cellpadding="0", cellspacing="0", name="cart_items_list")
+                            colgroup(valign="middle")
+                                col(width="80")
+                                col
+                                col(width="120")
+                                col(width="120")
+                                col(width="120")
+                                col(width="120")
+                                col(width="120")
+                            thead
+                                tr
+                                    th Remove
+                                    th Item
+                                    th Merchant
+                                    th Quantity
+                                    th Points
+                                    th Price
+                                    th Total
+                            each cartStoreList in shoppingCartList.stores
+                                tbody(name='shopping_store_row')
+                                    each cartGoods in cartStoreList.goodsList
+                                        tr(name='shopping_item_row')
+                                            td
+                                                input(type="hidden", name="product_id", value="#{cartGoods.productId}")
+                                                input(type="hidden", name="shopping_item_id", value="#{cartGoods.shoppingItemId}")
+                                                input(type="hidden", name="shopping_cart_id", value="#{cartGoods.shoppingCartId}")
+                                                input(name="item_remove_check", type="checkbox")
+                                            td.item
+                                                div.pic
+                                                    a(href="#{contextPath}/product?product_id=#{cartGoods.productId}")
+                                                    img(alt="#{cartGoods.productName}", src="#{cartGoods.productImage}")
+                                                div.info
+                                                    a(title="#{cartGoods.productName}", href="#{contextPath}/product?product_id=#{cartGoods.productId}") #{cartGoods.productName}
+
+                                            td(name="store_name") #{cartStoreList.storeName}
+                                            td.quantity
+                                                input(type="hidden", name="goods_stock", value="#{cartGoods.stock}")
+                                                select(name="item_select_count")
+                                                    - var goodsCount = cartGoods.stock
+                                                    -if(parseInt(cartGoods.count) > parseInt(cartGoods.stock))
+                                                        - var goodsCount = cartGoods.count
+
+                                                    - for (var i = 1;i <= parseInt(goodsCount);i++)
+                                                        -if(parseInt(i) == parseInt(cartGoods.count))
+                                                            option(selected="true", value="#{i}") #{i}
+                                                        -else
+                                                            option(value="#{i}") #{i}
+                                                p(name="error", style="display:none; color:#FF6600; border: 1px solid #FF6600; background-color: #EDF6FF; padding:1px; margin: 5px 10px; line-height: 24px; font-weight:700;")
+                                                    |Over Stock! You Can Only Have $!cartGoods.stock
+                                                input(type="hidden",name="item_count")
+                                            td(name="product_point")#{cartGoods.point}
+                                            td.td2
+                                                span $
+                                                    em.r2-sp1 #{cartGoods.nowPrice}
+                                            - var goodsTotalPrice = parseFloat(cartGoods.nowPrice) * parseFloat(cartGoods.count)
+                                            - var goodsTotalPrice = parseFloat(goodsTotalPrice)
+                                            td.td4
+                                                span $
+                                                    em.r2-sp2(name="goods_subtotal_price") #{cartStoreList.totalNowPrice}
+                            tbody
+                                tr.sub
+                                    td Subtotal
+                                    td.total(colspan="6")
+                                        p(name="items_total_price") $#{shoppingCartList.totalNowPrice}
+                                        p + $0 tax
+                            tfoot
+                                tr.all-total
+                                    td.Total
+                                    td.total(colspan="6",name="items_total_price")
+                                        b $
+                                        b #{shoppingCartList.totalNowPrice}
+                                tr
+                                    td.action(colspan="7")
+                                        div
+                                            button.update(name="btn_update") Update
+                                            button.continue_checkout(name='btn_checkout_shopping_cart')
+                                            input(type="hidden",name="shopping_cart_item_id")
+                    -else
+                        div.m-nog
+                            p
+                                span Your Shopping Cart is empty. You Could:
+
+                            p
+                                a(href="#{contextPath}/") Shoping now
+
+                            p
+                                a(href="#{contextPath}/usercenter/") Checking your watch list
+                    div.m-nog.hid_template
+                        p
+                            span Your Shopping Cart is empty. You Could:
+
+                        p
+                            a(href="#{contextPath}/") Shopping now
+
+                        p
+                            a(href="#{contextPath}/usercenter/") Checking your watch list
+
+        include ../shared/messages_box
+

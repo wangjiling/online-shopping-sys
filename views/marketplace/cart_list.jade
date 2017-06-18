@@ -1,0 +1,216 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/shopping_cart_page.js",language="javascript",type="text/javascript")
+    script(src="#{contextPath}/javascripts/check_cart_list_count.js",language="javascript",type="text/javascript")
+    script(src='#{contextPath}/javascripts/order_detail_input_page.js')
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/cart-list.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/oder-detail-input.css')
+
+block content
+    div.container.cartList
+        div.section
+            div.s-cart
+                h2 My Shopping Cart
+        div.section.cf
+            div.s-cart
+                div.s-cart-t
+                    h3 My selected items
+                div.s-cart-m
+                    - if(shoppingCartList.length > 0)
+                        table(border="0", align="center", cellpadding="0", cellspacing="0", name="cart_items_list")
+                            colgroup(valign="middle")
+                                col(width="100")
+                                col
+                                col(width="130")
+                                col(width="130")
+                                col(width="130")
+                                col(width="130")
+                                                                                                                                                        //                                col(width="130")
+                            thead
+                                tr
+                                    th
+                                        button.bt-delete(name="btn_remove") Delete
+                                    th Item
+                                    th Supplier
+                                    th Quantity
+                                                                                                                                                    //                                    th Surplus Points
+                                    th Price
+                                    th Total
+                                tbody(name='shopping_store_row')
+                                    - each cartItem in shoppingCartList
+                                        tr(name='shopping_item_row')
+                                            td
+                                                input(type="hidden", name="cartId", value="#{cartItem.cartId}")
+                                                input(name="item_remove_check", type="checkbox", class = "#{cartItem.cartId}")
+                                            td.item
+                                                div.pic
+                                                    a(href="#{contextPath}/product/#{cartItem.productId}")
+                                                        img(alt="#{cartItem.productName}", src="#{cartItem.majorImage}")
+                                                div.info
+                                                    a(title="#{cartItem.productName}", href="#{contextPath}/product/#{cartItem.productId}") #{cartItem.productName}
+
+                                            td(name="storeName") #{cartItem.storeName}
+                                            td.quantity(name="quantity") #{cartItem.quantity}
+                                                                                                                //                                            td(name="product_point")#{point}
+                                            td.td2
+                                                span $
+                                                    em.r2-sp1 #{cartItem.price}
+                                            td.td4
+                                                span $
+                                                    em.r2-sp2(name="itemTotalMoney") #{cartItem.itemTotalMoney}
+                            tbody
+                                tr.sub
+                                    td Subtotal
+                                    td.total(colspan="6")
+                                        p $
+                                            span.totalPrice #{totalMoney}
+                                tr.points
+                                    td
+                                        div.img
+                                            img(src="#{contextPath}/pics/monery.png")
+                                    td.point(colspan="6")
+                                        span.usePoint You have #{point} points can be used, you can use the points to buy goods.
+                                        span
+                                            em.minus -
+                                            select(name="usePoint")
+                                                - for(var i=0; i<= point; i++)
+                                                    option(value = "#{i}") #{i}
+                                            em point
+                            tfoot
+                                tr.all-total
+                                    td.Total
+                                    td.total(colspan="6")
+                                        em $
+                                        em.payMoney #{totalMoney}
+                                tr
+                                    td.action(colspan="7")
+                                        div
+                                            button.continue_checkout(name='btn_checkout_shopping_cart')
+                                        div
+                                            span.payWay Other Ways To Pay
+                                            button.pay(name="payNow") payNow
+                    -else
+                        div.m-nog
+                            p
+                                span Your Shopping Cart is empty. You Could:
+
+                            p
+                                a(href="#{contextPath}/") Shoping now
+
+                            p
+                                a(href="#{contextPath}/order/list") LOOK INTO ALL OF YOUR ORDERS
+                div.m-nog.hid_template
+                    p
+                        span Your Shopping Cart is empty. You Could:
+
+                    p
+                        a(href="#{contextPath}/") Shoping now
+
+                    p
+                        a(href="#{contextPath}/order/list") LOOK INTO ALL OF YOUR ORDERS
+
+    div.container.orderDetail.hid_template
+        div.section
+            div.step-thr.cf
+                div.step1 My Shopping Cart
+                div.step2.onhover Check  Out  Order
+                div.step3 Submit Successfully
+        div.section.cf
+            form(action="#{contextPath}/order/generate_order",id="form_order_detail",name="form_order_detail",method="post")
+                div.order
+                    div.order-t
+                        h2 Your Completed Order
+                    div.order-m.cf
+                        div.o-m
+                            div.o-m-hd
+                                h3 Shipping Address
+                            div.o-m-bd.m-bd1
+                                p
+                                    span Name:
+                                    input.txt1(type="text",id="address_name",name="receiverName")
+                                    span(id = "nameMsg")
+                                p
+                                    span Address:
+                                    input.txt2(type="text",id="address_value",name="address")
+                                    span(id="addressMsg")
+                                p
+                                    span City:
+                                    input.txt2(type="text",id="city_value",name="city")
+                                    span(id="cityMsg")
+                                p
+                                    span Post Code/Zip:
+                                    input.txt1(type="text",id="zip_code",name="zipCode")
+                                    span(id="zipMsg")
+                                p
+                                    span Telephone:
+                                    input.txt3(type="text",id="tel_number",name="telephone")
+                                    span(id="mobilePhoneMsg")
+                        div.o-m
+                            div.o-m-hd
+                                h3 Payment
+                            div.o-m-bd.m-bd2
+                                p
+                                    input(type="radio",value="paypal",name="payType",checked="true")
+                                    span PayPal
+                                    a(href="#{contextPath}/inbuilding")
+                                        img(src="#{contextPath}/pics/23.jpg")
+                        div.o-m
+                            div.o-m-hd
+                                h3 Item list
+                            div.o-m-bd.m-bd3
+                                table(cellpadding="0",cellspacing="0")
+                                    thead
+                                        tr
+                                            th Deal
+                                            th Price
+                                            th Quantity
+                                    tbody
+                                        - each cartItem in shoppingCartList
+                                            input(type="hidden",name="product",value="#{cartItem.productName} , $#{cartItem.price} ,#{cartItem.quantity}")
+                                            tr(class = "#{cartItem.cartId}")
+                                                td.td1
+                                                    div.m-img
+                                                        a(href="#{contextPath}/product/#{cartItem.productId}")
+                                                            img(alt="#{cartItem.productName}", src="#{cartItem.majorImage}")
+                                                    div.m-txt
+                                                        a(title="#{cartItem.productName}",href="#{contextPath}/product/#{cartItem.productId}")
+                                                            #{cartItem.productName}
+                                                        p
+                                                            #{cartItem.description}
+                                                td.td2
+                                                    span $
+                                                        p.in_line
+                                                            #{cartItem.price}
+                                                td.td2
+                                                    #{cartItem.quantity}
+
+                        div.o-m
+                            div.o-m-hd
+                                h3 Your Order
+                            div.o-m-bd.m-bd4
+                                p
+                                    span Item Total:
+                                    input(type="hidden",name="usedPoint")
+                                    em $
+                                    em.payMoney #{totalMoney}
+                                    em (You have used
+                                    em.em1.usedPoint
+                                    |points)
+                                p
+                                    span Shipping:
+                                    em $0
+                                p Your Total Payment:
+                                    input(type="hidden",name="totalPrice",value="#{totalMoney}")
+                                    input(type="hidden",name="payMoney",value="#{totalMoney}")
+                                    em.em1 $
+                                    em.em1.payMoney #{totalMoney}
+
+                        div.o-m.m-bt
+                            button.bt-submit(type = "button", id="btn_order_info")
+
+                    div.order-b

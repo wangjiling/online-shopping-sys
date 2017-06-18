@@ -1,0 +1,247 @@
+
+function loadOrderList(willShowPage, lastShowPage) {
+    var myForm = getActionForm(getURI("/order/ajax/list"));
+    showOrderList(willShowPage, lastShowPage, myForm);
+}
+
+function showOrderList(willShowPage, lastShowPage, myForm) {
+    // Cleans old orders.
+    var olderOrders = $('#panel_order_list').find('tbody.order_row');
+    for (var i = 0; olderOrders != null && i < olderOrders.length; i++) {
+        if (!$(olderOrders[i]).hasClass('hid_template')) {
+            $(olderOrders[i]).remove();
+        }
+    }
+    $('.bd-r1-m3').append("<div class='m3-div' style='text-align: center; padding: 20px 0; height:100px;'><img style='border: none; width: 100px; height: 100px;' src=" + getURI('/static/images/ajax-loader.gif') + " alt='Loading...'></div> ");
+    appendPageInfoToForm(willShowPage, lastShowPage, myForm);
+    ajaxRequest(myForm,
+            function(data) {
+                if (data.showObject.orders) {
+
+
+                    var orders = data.showObject.orders;
+                    var orderRowTmp = $('#panel_order_list').find('tbody.hid_template').clone(true);
+                    var orderItemTmp = orderRowTmp.find('tr.hid_template').clone(true);
+                    var orderRow;
+                    var orderItem;
+                    var date;
+                    for (var i = 0; i < orders.length; i++) {
+
+                        var order = orders[i];
+                        // Input Order Information.
+                        orderRow = orderRowTmp.clone(true);
+                        orderRow.find("[name=order_number]").html(order.orderNumber);
+                        date = new Date(order.clinchDate);
+                        orderRow.find("[name=clinch_date]").html(date.pattern("yyyy-MM-dd hh:mm:ss"));
+                        orderRow.find('[name=order_id]').val(order.orderId);
+                        orderRow.find('[name=paypal_id]').val(order.paypalId);
+
+                        for (var j = 0; j < order.items.length; j++) {
+
+                            var item = order.items[j];
+
+                            // Input Item Information.
+                            orderItem = orderItemTmp.clone(true);
+
+                            orderItem.find('[name=product_image]').attr({'src':item.productImgUrl,'alt':item.productName});
+                            orderItem.find('[name=product_url]').attr({'href':getURI('/product?product_id=' + item.productId),'title':item.productName});
+                            orderItem.find('[name=product_name]').html(item.productName);
+                            orderItem.find('[name=product_summary]').html(item.productSummary);
+                            orderItem.find('[name=product_price]').html(item.nowPriceStr);
+                            orderItem.find('[name=product_count]').html(item.count);
+
+
+                            if (j == 0) {
+                                orderItem.find('[name=order_status]').html(order.orderStatusName);
+                                orderItem.find('[name=total_price]').html(order.totalPriceStr);
+                                orderItem.find('[name=shipment_price]').html(order.shipmentPriceStr);
+                                orderItem.find('[name=order_status_column]').attr('rowspan', order.items.length);
+                                orderItem.find('[name=total_price_column]').attr('rowspan', order.items.length);
+                            } else {
+                                orderItem.find('[name=order_status_column]').remove();
+                                orderItem.find('[name=total_price_column]').remove();
+                            }
+
+                            orderItem.removeClass('hid_template');
+                            orderRow[0].appendChild(orderItem[0]);
+
+                        }
+
+
+                        // Show Cancel Button
+                        if ("WaitingProcess" == order.orderStatusName || "UserModiftying" == order.orderStatusName) {
+                            orderRow.find('[name=btn_cancel]').removeClass('hid_template');
+                        } else {
+                            orderRow.find('[name=btn_cancel]').addClass('hid_template');
+                        }
+
+                        if ("WaitingPay" == order.orderStatusName) {
+                            orderRow.find('[name=btn_buy_now]').removeClass('hid_template');
+                        } else {
+                            orderRow.find('[name=btn_buy_now]').addClass('hid_template');
+                        }
+
+                        if ("Delivering" == order.orderStatusName) {
+                            orderRow.find('[name=btn_confirm]').removeClass('hid_template');
+                        } else {
+                            orderRow.find('[name=btn_confirm]').addClass('hid_template');
+                        }
+
+                        // Adds action buttons to the end of one order row.
+                        var orderAction = orderRow.find("tr[name=order_deal_actions_section]").clone(true);
+                        orderRow.find("tr[name=order_deal_actions_section]").remove();
+                        orderRow[0].appendChild(orderAction[0]);
+
+                        orderRow.removeClass('hid_template');
+                        orderRow.insertBefore("tfoot.order_list_foot");
+                    }
+                    $('.m3-div').hide();
+                    generatePaginationFoot(data, $('#product_list_page_area'), showOrderList, myForm);
+                }
+            }
+        , function() {
+            $('.m3-div').hide();
+        });
+
+
+}
+
+
+function getOrderListRequestForm(actionUrl) {
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', actionUrl);
+    form.setAttribute('name', 'frm_ajax');
+    return form;
+}
+
+function cancelOrder(event) {
+    var form = getOrderActionForm(getURI('/order/ajax/cancel'), event);
+    $(event.target).attr("disabled", true);
+    ajaxRequest(form,
+            function(data) {
+                var rst;
+                if (data.result) {
+                    rst = data.result;
+                } else {
+                    rst = data.result;
+                }
+                loadOrderList();
+            }
+            , function() {
+                $(event.target).attr("disabled", false);
+            });
+}
+
+var confirmReceivedOrder = function(event) {
+    var form = getOrderActionForm(getURI('/order/view_received_confirm'), event);
+    $('body')[0].appendChild(form);
+    form.submit();
+}
+
+
+function buyOrderNow(event) {
+    var curRecord = $(event.target).parents(".order_row");
+    var orderId = curRecord.find('[name=order_id]').val();
+    location.href = getURI("/order/buy_now?order_id=" + orderId);
+}
+
+function getOrderActionForm(actionUrl, event) {
+    var hidOrderId = $(event.target).parents(".order_row").find('[name=order_id]').clone(true);
+    var hidOrderNumber = $(event.target).parents(".order_row").find('input[name=order_number]').clone(true);
+    hidOrderId.attr('name', 'order_id');
+    hidOrderNumber.attr('name', 'order_number');
+
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', actionUrl);
+    form.setAttribute('name', 'frm_ajax');
+    form.appendChild(hidOrderId[0]);
+    form.appendChild(hidOrderNumber[0]);
+
+    return form;
+}
+
+function buyWithPaypal(event){
+    var orderRow = $(event.target).parents('tbody.order_row');
+    var form = getPaypalStandardForm(orderRow.find('[name=paypal_id]').val()
+                                    ,orderRow.find('[name=order_number]').html()
+                                    ,orderRow.find('[name=order_id]').val()
+                                    ,$(orderRow.find('[name=total_price]')[1]).html()
+                                    ,'USD'
+                                    ,'US'
+                                    ,getServerBaseUrl('/usercenter/orderlist')
+                                    ,getServerBaseUrl('/paypal/receive_paypal_ipn')
+                                    ,getServerBaseUrl('/usercenter/orderlist'));
+    $('body')[0].appendChild(form);
+    form.submit();
+}
+
+function getPaypalStandardForm(busAccount, itemName, orderNumber, amount, currency, location, callback, ipnURL, cancelUrl) {
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', 'https://www.sandbox.paypal.com/cgi-bin/webscr');
+    form.setAttribute('name', 'frm_paypal');
+
+    var hidVal = document.createElement('input');
+    hidVal.setAttribute('type', 'hidden');
+
+    var hidCmd = $(hidVal).clone(true);
+    hidCmd.attr('name', 'cmd');
+    hidCmd.val('_xclick');
+    form.appendChild(hidCmd[0]);
+
+    var hidBusiness = $(hidVal).clone(true);
+    hidBusiness.attr('name', 'business');
+    hidBusiness.val(busAccount);
+    form.appendChild(hidBusiness[0]);
+
+    var hidItemName = $(hidVal).clone(true);
+    hidItemName.attr('name', 'item_name');
+    hidItemName.val(itemName);
+    form.appendChild(hidItemName[0]);
+
+    var hidOrderNumber = $(hidVal).clone(true);
+    hidOrderNumber.attr('name', 'invoice');
+    hidOrderNumber.val(orderNumber);
+    form.appendChild(hidOrderNumber[0]);
+
+    var hidAmount = $(hidVal).clone(true);
+    hidAmount.attr('name', 'amount');
+    hidAmount.val(amount);
+    form.appendChild(hidAmount[0]);
+
+    var hidCurrencyCode = $(hidVal).clone(true);
+    hidCurrencyCode.attr('name', 'currency_code');
+    hidCurrencyCode.val(currency);
+    form.appendChild(hidCurrencyCode[0]);
+
+    var hidLocation = $(hidVal).clone(true);
+    hidLocation.attr('name', 'lc');
+    hidLocation.val(location);
+    form.appendChild(hidLocation[0]);
+
+    var hidCallBack = $(hidVal).clone(true);
+    hidCallBack.attr('name', 'return');
+    hidCallBack.val(callback);
+    form.appendChild(hidCallBack[0]);
+
+    var hidCancelReturn = $(hidVal).clone(true);
+    hidCancelReturn.attr('name', 'cancel_return');
+    hidCancelReturn.val(cancelUrl);
+    form.appendChild(hidCancelReturn[0]);
+
+    var hidReturnMethod = $(hidVal).clone(true);
+    hidReturnMethod.attr('name', 'rm');
+    // Use Post method to call back to my site.
+    hidReturnMethod.val(2);
+    form.appendChild(hidReturnMethod[0]);
+
+    var hidIPNLink = $(hidVal).clone(true);
+    hidIPNLink.attr('name', 'notify_url');
+    hidIPNLink.val(ipnURL);
+    form.appendChild(hidIPNLink[0]);
+
+    return form;
+}
+

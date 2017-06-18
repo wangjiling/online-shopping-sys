@@ -1,0 +1,17 @@
+div.shop-cart-div(id="header_bar_shopping_cart_items_div")
+    div.shop-cart-total
+        p
+            span.cartNumber(name="header_bar_shopping_cart_items")
+                |#{cartNumber}
+            |Items
+
+        p
+            |Total:
+            span.totalMoney(name="header_bar_shopping_cart_total")
+                |$#{totalMoney}
+
+        p
+            button.bt-check1(onclick="window.location='#{contextPath}/cart/list'").
+                CheckOut
+
+

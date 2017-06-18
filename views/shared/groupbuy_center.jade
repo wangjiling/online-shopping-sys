@@ -1,0 +1,88 @@
+div.groupbuy-center.g-radius
+    h3 My Stuff
+    div.tabs.cf
+        a.onhover.order(href='#action') Order
+        a.coupon(href='#action') Coupon
+    div.list
+        div.order(name='order_list_part')
+            table(cellpadding='0', cellspacing='0', name='order_list')
+                colgroup(valign='middle')
+                    col
+                    col(width='120')
+                    col(width='120')
+                    col(width='120')
+                    col(width='120')
+                thread
+                    tr
+                        th Order Content
+                        th Price
+                        th Amount
+                        th Transaction Status
+                        th.noborder Total
+                tbody.hid_template.order_row(name='order_row')
+                    tr.number
+                        td.noborder(colspan='5')
+                            span Order Numbers:
+                                p.in_line(name='order_number')
+                            span Purchase Date:
+                                p.in_line(name='clinch_date')
+                    tr.info.order_item(name='order_item')
+                        td.td1
+                            div.pic
+                                a(name='product_url', href='#action')
+                                    img(name='product_image')
+                            div.text
+                                a(name='product_url', href='#action')
+                                    p.in_line(name='product_name')
+                                p(name='product_summary')
+                        td.td2
+                            span $
+                                p.in_line(name='product_price')
+                        td.td2(name='product_count') 1
+                        td.td2(rowspan='1', name='order_status_column')
+                            b(name='order_status')
+                        td.td2.noborder(rowspan='1', name='total_price_column')
+                            span $
+                                p.in_line(name='total_price')
+                    tr.action(name="order_deal_actions_section")
+                        td.noborder(colspan="5")
+                            input(type="hidden", name="order_id", value="")
+                            input(type="hidden", name="order_number", value="")
+                            input(type="hidden", name="paypal_id", value="")
+                            button.bt-buy hid_template(name="bt-buy") Buy Now
+                            button.bt-cancel hid_template(name="bt_cancel") Cancel
+                            button.bt-confirm hid_template(name="btn_confirm_deal_order") Confirm
+                tfoot.order_list_foot
+            div.paging
+        div.coupon(name="coupon_list_part")
+            table(cellpadding="0", cellspacing="0", name="coupon_list")
+                colgroup(valign="middle")
+                    col
+                    col(width="120")
+                    col(width="120")
+                    col(width="120")
+                    col(width="120")
+                thead
+                    tr
+                        th Name
+                        th Coupon Code
+                        th Status
+                        th Purchase Date
+                        th.noborder Expiration Date
+                tbody.hid_template(name="coupon_item")
+                    tr
+                        td
+                            div.pic
+                                a(name="product_url", href="#action")
+                                    img(name="coupon_image")
+                            div.title
+                                a(name="product_url", href="#action")
+                                    p.in_line(name="coupon_name")
+                                input(type="hidden", name="coupon_id", value="")
+                        td(name="coupon_code")
+                        td
+                            b(name="coupon_status")
+                        td(name="purchase_date")
+                        td.noborder(name="expiration_date")
+            div.paging
+                div#coupon_list_page_area.cf

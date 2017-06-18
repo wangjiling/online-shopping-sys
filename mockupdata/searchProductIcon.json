@@ -1,0 +1,74 @@
+[
+    {
+        "productId":11,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"349.95",
+        "nowPrice":"199.50",
+        "offPercent":"0.43"
+    },
+    {
+        "productId":12,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"110.00",
+        "nowPrice":"29.95",
+        "offPercent":"0.73"
+    },
+    {
+        "productId":13,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"6999.00",
+        "nowPrice":"4299.00",
+        "offPercent":"0.3"
+    },
+    {
+        "productId":14,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"65.00",
+        "nowPrice":"18.99",
+        "offPercent":"0.71"
+    },
+    {
+        "productId":15,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"399.99",
+        "nowPrice":"250.00",
+        "offPercent":"0.37"
+    },
+    {
+        "productId":16,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"849.99",
+        "nowPrice":"549.99",
+        "offPercent":"0.35"
+    },
+    {
+        "productId":17,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"29.99",
+        "nowPrice":"5.99",
+        "offPercent":"0.8"
+    },
+    {
+        "productId":18,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"29.99",
+        "nowPrice":"7.99",
+        "offPercent":"0.73"
+    },
+    {
+        "productId":19,
+        "name":"Lenovo Yoga13-IFI",
+        "majorImage":"images/lenovo.jpg",
+        "marketPrice":"79.99",
+        "nowPrice":"14.99",
+        "offPercent":"0.81"
+    }
+]

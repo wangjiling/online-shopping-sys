@@ -1,0 +1,277 @@
+.topProducts{
+    font-size: 18px;
+    margin: 35px 10px;
+    font-weight: bold;
+}
+.top{
+    margin: 0 16px;
+    color:#0078BD;
+}
+.selection {
+    margin-top: 1px;
+}
+.selection .graph {
+    height: 100px;
+}
+.hot-sell{
+    border: 1px solid #0078bd;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+}
+.hot-sell h2{
+    padding:0 0 15px 20px;
+}
+.hot-sell h2 a{
+    font-size: 24px;
+    color: #77b249;
+}
+.hot-sell .info{
+    float: left;
+    width: 550px;
+}
+.hot-sell .info>div{
+    height:265px;
+}
+.hot-sell .info img{
+    width: 510px;
+    height:265px;
+
+}
+.hot-sell .info p{
+    padding-top: 20px;
+    display: block;
+    max-height:110px;
+}
+.hot-sell .info p span,.hot-sell .price .about p span{
+    font-size: 14px;
+    font-weight: 700;
+    color: #0078bd;
+    display: block;
+}
+.hot-sell .price{
+    float: right;
+    width: 400px;
+}
+.hot-sell .price .now-price{
+    float: left;
+    width: 170px;
+    padding-left:10px;
+    font-weight: 700;
+    text-align: center;
+}
+.hot-sell .price .now-price em{
+    font-size: 40px;
+    color: #0078bd;
+}
+.hot-sell .price .now-price p{
+    font-size: 14px;
+    color: #cccbcb;
+}
+.hot-sell .price .buy{
+    float: right;
+    width: 190px;
+    padding: 17px 10px;
+}
+.hot-sell .price .buy .buy-now{
+    display: block;
+    width: 167px;
+    height: 48px;
+    text-indent: -999em;
+    background: url(../images/buy-now.png) no-repeat scroll 0 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.hot-sell .price .discount{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #cdcdcd;
+    padding: 10px;
+    width: 348px;
+    margin: 10px 20px 0 0;
+    float: left;
+}
+.hot-sell .price .discount dl{
+    float: left;
+    width: 30%;
+    margin: 0 5px;
+    text-align: center;
+}
+.hot-sell .price .discount dl dt{
+    font-size: 14px;
+}
+.hot-sell .price .discount dl dd{
+    font-size: 26px;
+    font-weight: 700;
+}
+.hot-sell .price .time{
+    float: left;
+    padding: 20px;
+    width: 340px;
+    text-align: center;
+    font-size: 26px;
+}
+.hot-sell .price .time b{
+    color: #0078bd;
+    padding-left: 10px;
+}
+.hot-sell .price .share{
+    padding-bottom:14px;
+    float: left;
+    width: 340px;
+}
+.hot-sell .price .share>div{
+    float: left;
+    margin: 0 5px;
+}
+.hot-sell .price .share p span{
+    font-size: 14px;
+    font-weight: 700;
+    color: #0078bd;
+}
+.hot-sell .price .about{
+    float: left;
+    width: 340px;
+    max-height:110px;
+    margin-top: 34px;
+}
+.local-sell .featured{
+    float: left;
+    width: 480px;
+}
+.local-sell .featured .title,.local-sell .maps .title,.popular .title{
+    height: 75px;
+    background: url(../images/title-bg.png) repeat-x scroll 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    padding-left: 10px;
+}
+.local-sell .featured .title h3,.local-sell .maps .title h3,.popular .title h3{
+    font-size: 26px;
+}
+.local-sell .featured .title p,.local-sell .maps .title p,.popular .title p{
+    font-size: 13px;
+    color: #848484;
+    font-weight: 700;
+}
+.local-sell .featured .products,.local-sell .maps .local,.popular .article{
+    height: 500px;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    background-color: white;
+    overflow: hidden;
+}
+.local-sell .featured .products ul li{
+    float: left;
+    width: 106px;
+    margin: 10px 26px 0;
+    font-weight: 700;
+}
+.local-sell .featured .products ul li a,.local-sell .featured .products ul li span,.popular .article .deals ul li .text span{
+    display: block;
+}
+.local-sell .featured .products ul li .pic{
+    padding: 12px 11px 12px 13px;
+    background: url(../images/img-bg1.png) no-repeat scroll 0 0;
+    width:80px;
+    height:80px;
+    overflow:hidden;
+
+}
+.local-sell .featured .products ul li .pic img{
+    width: 80px;
+    height: 80px;
+}
+.local-sell .featured .products ul li .text{
+    line-height: 30px;
+    height: 30px;
+    white-space: nowrap;
+    text-align: center;
+}
+.local-sell .featured .products ul li span,.popular .article .deals ul li .text span{
+    text-align: center;
+    color: red;
+}
+.local-sell .maps{
+    float: right;
+    width: 480px;
+}
+.popular .title {
+    line-height: 75px;
+}
+.popular .title h3{
+    float: left;
+}
+.popular .title p{
+    float: right;
+    padding-right: 10px;
+}
+.popular .article{
+    height: 300px;
+}
+.popular .article .left,.popular .article .deals,.popular .article .right{
+    float: left;
+}
+.popular .article .left a,.popular .article .right a{
+    display: block;
+    width: 33px;
+    height: 300px;
+    background: url(../images/left-right.png) no-repeat scroll 0 140px;
+    margin: 0 3px;
+    text-indent: -999em;
+    cursor: pointer;
+}
+.popular .article .right a{
+    background-position: -33px 140px;
+}
+.popular .article .deals{
+    width: 900px;
+    font-weight: 700;
+    overflow: hidden;
+}
+.popular .article .deals ul li{
+    float: left;
+    margin: 10px 5px;
+    width: 170px;
+}
+.popular .article .deals ul li .pic{
+    padding: 10px;
+    background: url(../images/img-bg2.png) no-repeat scroll 0 0;
+    width:155px;
+    height:155px;
+    overflow:hidden;
+}
+.popular .article .deals ul li .pic img{
+    width: 150px;
+    height: 150px;
+}
+.popular .article .deals ul li .text{
+    font-size: 14px;
+}
+.popular .article .deals ul li .text a{
+    color: #333333;
+    line-height: 28px;
+    display: block;
+    height: 38px;
+    text-align: center;
+}
+.popular .article .deals ul li .purchase{
+    padding: 0 20px;
+    text-align: center;
+}
+.popular .article .deals ul li .purchase a{
+    display: block;
+    width: 126px;
+    height: 30px;
+    text-indent: -999em;
+    background: url(../images/purchase-bt-bg.png) no-repeat scroll 0 0;
+    overflow: hidden;
+}

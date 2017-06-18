@@ -1,0 +1,19 @@
+var orderList = require("../mockupdata/orderList_1.json");
+var orderAction = require("../mockupdata/orderAction.json");
+var checkOutList = require("../mockupdata/checkOutList.json");
+
+exports.generateOrder = function(req, res, renderFun){
+    renderFun(req, res, {title:'checkout - order confirmation', orderList: orderList}, 'marketplace/order_confirmation');
+}
+
+exports.buyOrderNow = function(req, res, renderFun){
+    renderFun(req, res, {title:'pay confirmation', orderAction: orderAction}, 'marketplace/paid_success');
+}
+
+exports.viewInputOrder = function(req, res, renderFun){
+    renderFun(req, res, {title:'pay confirmation', checkOutList: checkOutList}, 'marketplace/order_detail_input');
+}
+
+exports.viewOrderConfirmAfterReceived = function(req, res, renderFun){
+    renderFun(req, res, {title:'Received Confirmation', orderAction: orderAction}, 'marketplace/received_confirm');
+}

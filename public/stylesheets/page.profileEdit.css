@@ -1,0 +1,72 @@
+.action {
+    margin: 20px 0;
+}
+
+.action a {
+    border: 1px solid #626262;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+}
+div.action {
+    display: block;
+    float: left;
+    margin-top: 75px;
+    text-align: center;
+}
+.action a{
+    margin: 0 100px;
+}
+.user-profile {
+    float: right;
+    width: 749px;
+}
+.g-radius {
+    background-color: white;
+    border: 1px solid #C7C7C7;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+.user-profile h3 {
+    background-image: -moz-linear-gradient(center top , #FBFBFB, #FFFFFF 100%);
+    border-radius: 5px 5px 0 0;
+    font-size: 30px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.user-profile .info {
+    border-top: 3px solid #149CEB;
+    padding: 20px;
+}
+.restaurantForm form > div{
+    padding: 20px;
+    position: relative;
+}
+.restaurantForm label.title{
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 700;
+}
+input[type="text"],textarea {
+    font: 400 1em/1.5 Arial,Helvetica,sans-serif;
+    width: 100%;
+}
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+}
+.logo .photos .imgs{
+    float: left;
+    max-width: 50%;
+}
+.logo input[type="button"]{
+    margin-left: 20px;
+}
+
+.logo .photos .imgs img {
+    border: 1px solid #ABABAB;
+    height: 150px;
+    padding: 1px;
+    width: 150px;
+}

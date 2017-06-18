@@ -1,0 +1,68 @@
+button{
+    height: 27px;
+    border: 0;
+    background: url(../images/buttons.png) no-repeat scroll 0 0;
+    text-indent: -999em;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bt-search{
+    float: left;
+    width: 62px;
+    background-position:-83px -80px;
+    margin-right:10px;
+}
+.bt-continue{
+    width:72px;
+    background-position:0 -109px;
+    margin-right: 10px;
+}
+.bt-check1{
+    width:82px;
+    background-position:0 -81px;
+    margin: 5px;
+}
+.bt-check2{
+    width:82px;
+    background-position:-58px -28px;
+}
+.bt-join{
+    width: 82px;
+    background-position:0 -138px;
+}
+.bt-sign{
+    width:62px;
+    background-position:-144px -80px;
+}
+.bt-buy,.bt-cancel,.bt-confirm,.bt-submit{
+    width: 72px;
+    margin-bottom: 5px;
+}
+.bt-buy{
+    background-position:-82px -138px;
+}
+.bt-cancel{
+    background-position:-154px -138px;
+}
+.bt-confirm{
+    background-position:-227px -138px;
+}
+.bt-submit{
+    height: 27px;
+    border: 0;
+    background: url(../images/buttons.png) no-repeat scroll -427px -138px;
+    text-indent: -999em;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bt-cs{
+    width: 127px;
+    background-position:-299px -138px;
+    margin-right: 10px;
+}
+.bt-creat{
+    width:122px;
+    background-position:-140px -28px;
+}

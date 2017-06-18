@@ -1,0 +1,100 @@
+option(value="Montgomery,AL").
+    Alabama
+option(value="Juneau,AK").
+    Alaska
+option(value="Phoenix,AZ").
+    Arizona
+option(value="Little?rock,AR").
+    Arkansas
+option(value="Sacramento,CA").
+    California
+option(value="Denver,CO").
+    Colorado
+option(value="Hartford,CT").
+    Connecticut
+option(value="Dover,DE").
+    Delaware
+option(value="Tallahassee,FL").
+    Florida
+option(value="Atlanta,GA").
+    Georgia
+option(value="Honolulu,HI").
+    Hawaii
+option(value="Boise,ID").
+    Idaho
+option(value="Springfield,IL").
+    Illinois
+option(value="Indianapolis,IN").
+    Indiana
+option(value="Des Moines,IA").
+    Iowa
+option(value="Topeka,KS").
+    Kansas
+option(value="Frankfort,KY").
+    Kentucky
+option(value="Baton Rouge,LA").
+    Louisiana
+option(value="Augusta,ME").
+    Maine
+option(value="Annapolis,MD").
+    Maryland
+option(value="Boston,MA",selected='true'>
+    Massachusetts
+option(value="Lansing,MI").
+    Michigan
+option(value="St.Paul,MN").
+    Minnesota
+option(value="Jackson,MS").
+    Mississippi
+option(value="Jefferson City,MO").
+    Missouri
+option(value="Helena,MT").
+    Montana
+option(value="Lincoln,NE").
+    Nebraska
+option(value="Carson City,NV").
+    Nevada
+option(value="Concord,NH").
+    New Hampshire
+option(value="Trenton,NJ").
+    New Jersey
+option(value="Santa Fe,NM").
+    New Mexico
+option(value="Albany,NY").
+    New York
+option(value="Raleigh,NC").
+    North Carolina
+option(value="Bismarck,ND").
+    North Dakota
+option(value="Columbus,OH").
+    Ohio
+option(value="Oklahoma City,OK").
+    Oklahoma
+option(value="Salem,OR").
+    Oregon
+option(value="Harrisburg,PA").
+    Pennsylvania
+option(value="Providence,RL").
+    Rhode Island
+option(value="Columbia,SC").
+    South Carolina
+option(value="Pierre,SD").
+    South Dakota
+option(value="Nashville,TN").
+    Tennessee
+option(value="Austin,TX").
+    Texas
+option(value="Salt Lake City,UT").
+    Utah
+option(value="Montpelier,VT").
+    Vermont
+option(value="Richmond,VA").
+    Virginia
+option(value="Olympia,WA").
+    Washington
+option(value="Charleston,WV").
+    West virginia
+option(value="Madison,WI").
+    Wisconsin
+option(value="Cheyenne,WY").
+    Wyoming

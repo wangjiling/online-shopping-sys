@@ -1,0 +1,252 @@
+var User = require("../beans/user").User;
+var indexControllers = require('../controllers/index');
+var storeController = require('../controllers/store');
+var productController = require('../controllers/product').index;
+var groupbuyController = require('../controllers/groupbuy');
+var sampleController = require('../controllers/index').sample1;
+var antiSpiderLoginController = require('../controllers/antiSpiderLogin').antiSpiderLogin;
+var loginController = require('../controllers/login');
+var signupController = require('../controllers/signup');
+var orderController = require('../controllers/order');
+var userCenterController = require('../controllers/userCenter');
+var cartController = require('../controllers/cart');
+var searchControllers = require('../controllers/search');
+var utils = require('../utils');
+var querystring = require("querystring");
+var urllib = require('url');
+var setting = require('../express.configuration').setting;
+var __appdir = require('../express.configuration').__appdir;
+var log = require('../utils/log');
+
+
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res, next){
+    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+    console.log('userid.session: '+req.session.userid);
+    console.log("params:" + params);
+    console.log("pathname:" + req.params.name);
+    console.log("name:" + params.query.name);
+    //utils.sleep(10000);
+    indexControllers.index(req, res);
+
+};
+
+
+/*
+ * GET home top deal.
+ */
+exports.loadHomeTopDeal = function(req, res, next){
+    indexControllers.loadHomeTopDeal(req, res, renderJson);
+};
+
+/*
+ * GET home hot sell.
+ */
+exports.loadHotSale = function(req, res, next){
+    indexControllers.loadHotSale(req, res, renderJson);
+};
+
+/*
+ * GET home nav
+ */
+exports.getCategories = function(req, res, next){
+    indexControllers.getCategories(req, res, renderJson);
+};
+
+/*
+ * GET Store Info page.
+ */
+exports.storeInfo = function(req, res, next){
+    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+    storeController.index(req, res,renderView);
+
+};
+
+
+/*
+ * GET Store products.
+ */
+exports.getProductsByStoreId = function(req, res, next){
+    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+    storeController.getProductsByStoreId(req, res,renderJson);
+
+};
+
+/*
+ * GET Product Detail page.
+ */
+exports.productDetail = function(req, res, next){
+    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+//    console.log('userid.session: '+req.session.userid);
+//    console.log("params:" + params);
+//    console.log("pathname:" + req.params.name);
+//    console.log("name:" + params.query.name);
+    //utils.sleep(10000);
+    productController(req, res,renderView);
+
+};
+/**
+ * Get Deal Detail
+ */
+exports.dealDetail = function(req, res, next){
+    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+    groupbuyController.dealDetail(req, res,renderView);
+
+};
+
+/*
+ * order received confirm
+ */
+exports.viewOrderConfirmAfterReceived = function(req, res){
+    orderController.viewOrderConfirmAfterReceived(req, res, renderView);
+};
+
+/*
+ * order confirmation
+ */
+exports.generateOrder = function(req, res){
+    orderController.generateOrder(req, res, renderView);
+};
+
+
+/*
+ * paid success
+ */
+exports.buyOrderNow = function(req, res){
+    orderController.buyOrderNow(req, res, renderView);
+};
+
+/*
+ * order_detail_input
+ */
+exports.viewInputOrder = function(req, res){
+    orderController.viewInputOrder(req, res, renderView);
+};
+
+
+/*
+ * search
+ */
+exports.searchAll = function(req, res){
+    searchControllers.searchAll(req, res, renderView);
+};
+
+
+/*
+ * search deal
+ */
+exports.searchDeal = function(req, res){
+    searchControllers.searchDeal(req, res, renderView);
+};
+
+
+/*
+ * search product
+ */
+exports.searchProduct = function(req, res){
+    searchControllers.searchProduct(req, res, renderView);
+};
+
+
+/*
+ * search store
+ */
+exports.searchStore = function(req, res){
+    searchControllers.searchStore(req, res, renderView);
+};
+
+
+/*
+ * search feature products
+ */
+exports.searchProductIcon = function(req, res){
+    searchControllers.searchProductIcon(req, res, renderJson);
+};
+
+
+/*
+ * shopping cart list
+ */
+exports.listCart = function(req, res){
+    cartController.listCart(req, res, renderView);
+};
+
+/*
+ * dealorder received confirm
+ */
+exports.viewConfirmAfterReceived = function(req, res){
+    groupbuyController.viewConfirmAfterReceived(req, res, renderView);
+};
+
+
+/*
+ * AntiSpider login
+ */
+
+exports.antiSpiderLogin = function(req, res){
+    antiSpiderLoginController(req, res, renderView);
+};
+
+/*
+ * user login
+ */
+exports.login = function(req, res){
+    loginController.login(req, res, renderView);
+};
+
+/*
+ * user sign up
+ */
+exports.signup = function(req, res){
+    signupController.signup(req, res, renderView);
+};
+
+/*
+ * user center
+ */
+exports.userCenter = function(req, res){
+    userCenterController.userCenter(req, res, renderView);
+};
+
+
+exports.sample1 = function(req, res, next){
+
+//    console.log("url:" + req.url);
+    var params = urllib.parse(req.url, true);
+//    console.log('userid.session: '+req.session.userid);
+//    console.log("params:" + params);
+//    console.log("pathname:" + req.params.name);
+//    console.log("name:" + params.query.name);
+//    utils.sleep(20000);
+    sampleController(req, res, renderView);
+}
+
+exports.sample2 = function(req, res, next){
+    renderView(req, res, {title: 'AntiSpider'}, 'sample2')
+}
+
+/**
+ * Render the view and append some common values.
+ * @type {Function}
+ */
+var renderView = exports.renderView = function(req, res, module, view){
+    module.contextPath = setting.contextPath;
+    module.appRoot = __appdir
+    module.keywords = utils.whenUndefined(req.session.keywords, function(value){return '';})
+    module.utils = utils;
+    res.render(view, module)
+}
+
+var renderJson = exports.renderJson = function(req, res, module){
+    res.writeHead(200, {"Content-Type": 'text/plain; charset=utf-8'});
+    res.end(JSON.stringify(module));
+}

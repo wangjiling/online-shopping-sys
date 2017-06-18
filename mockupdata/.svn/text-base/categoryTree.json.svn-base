@@ -1,0 +1,82 @@
+[
+    {
+        "categoryId":5846,
+        "parentId":5885,
+        "level":4,
+        "name":"Fashion",
+        "path":"/login",
+        "subCategories":[
+            {
+                "categoryId":322,
+                "parentId":5444,
+                "level":3,
+                "name":"Car Mould",
+                "path":"/login"
+            }
+        ]
+    },
+    {
+        "categoryId":5846,
+        "parentId":5885,
+        "level":4,
+        "name":"Motors",
+        "path":"/login",
+        "subCategories":[
+            {
+                "categoryId":322,
+                "parentId":5444,
+                "level":3,
+                "name":"Car Mould",
+                "path":"/login"
+            }
+        ]
+    },
+    {
+        "categoryId":5846,
+        "parentId":5885,
+        "level":4,
+        "name":"Electronics",
+        "path":"/login",
+        "subCategories":[
+            {
+                "categoryId":322,
+                "parentId":5444,
+                "level":3,
+                "name":"Car Mould",
+                "path":"/login"
+            }
+        ]
+    },
+    {
+        "categoryId":5846,
+        "parentId":5885,
+        "level":4,
+        "name":"Collectibles & Art",
+        "path":"/login",
+        "subCategories":[
+            {
+                "categoryId":322,
+                "parentId":5444,
+                "level":3,
+                "name":"Car Mould",
+                "path":"/login"
+            }
+        ]
+    },
+    {
+        "categoryId":5846,
+        "parentId":5885,
+        "level":4,
+        "name":"Sporting Goods",
+        "path":"/login",
+        "subCategories":[
+            {
+                "categoryId":322,
+                "parentId":5444,
+                "level":3,
+                "name":"Car Mould",
+                "path":"/login"
+            }
+        ]
+    }
+]

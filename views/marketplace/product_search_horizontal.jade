@@ -1,0 +1,40 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/search_panel.js",language="javascript")
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/product_horizontal.css')
+
+block content
+    div.container
+        div.section
+            div.search-h
+                div.title
+                    h2 Search Results
+                    span (keywords: #{keyword})
+                div.cf
+                    div.result.cf
+                        -if(productList.length >0){
+                            ul
+                                each product in productList
+                                    li
+                                        div.pic
+                                            a(href="#{contextPath}/product/#{product.productId}")
+                                                img(src="#{product.majorImage}",alt="#{product.productName}")
+                                        div.text
+                                            a.txt(href="#{contextPath}/product/#{product.productId}", title="#{product.productName})
+                                                #{product.productName}
+                                            span $#{product.nowPrice}
+                                        div.purchase
+                                            a(href="#{contextPath}/product/#{product.productId}", title="Purchase Now") Purchase Now
+
+                        -}else{
+                            div.noProduct
+                                span.noPro1 God! 没有找到与 "#{keyword}" 相关的商品哦,要不您换个关键词我帮您再找找看
+                                span.noPro2 建议您：
+                                    p 1.看看输入的文字是否有误
+                                    p 2.调整关键词，如“全铜花洒套件”改成“花洒”或“花洒 套件”
+                        -}

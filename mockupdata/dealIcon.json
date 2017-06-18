@@ -1,0 +1,52 @@
+{
+    "productId": 9,
+    "dealName":"Touch 3gs",
+    "dealTitle":"Apple's product",
+    "dealSubtitle":"this is Apple Touch",
+    "nowPrice":299.99,
+    "originalPrice":"399.99",
+    "offPercent":"0.8",
+    "remainingTime":"9959008",
+    "location":[
+        {
+            "address1":"Marj iilcker 3302",
+            "address2":"",
+            "city":"Boston",
+            "state":"AK",
+            "country":"US",
+            "zipCode":"54862",
+            "phone":"15426869869",
+            "id":"0458",
+            "lat":"1.235685265",
+            "lng":"1.002185265"
+        }
+    ],
+    "address":"Marj iilcker 3302",
+    "beginTime":"8:00",
+    "endTime":"10:00",
+    "upLimit":"99",
+    "downLimit":"1",
+    "dealStock":"891",
+    "boughtCount":"499.99",
+    "tippingPoint":"49",
+    "minimumBoughtDate":"9:00",
+    "dealIcon":"/images/to1.jpg",
+    "disCount":"2",
+    "dealDescription":"this is a Apple Touch",
+    "description":"there are Apple Touch",
+    "businessDescription":"Nothing",
+    "saleOutFlag":"ture",
+    "validGroupDatetime":"8:00",
+    "dealDiscountType":"DEAL",
+    "couponExpire":"2012.12.12",
+    "storeId":"2548",
+    "storeTitleOutCmd":[
+        {
+            "id":"9527",
+            "name":"Apple",
+            "majorImage":"/images/touchStore.jpg"
+        }
+    ],
+    "pointRate":"4",
+    "pointBase":"1"
+}

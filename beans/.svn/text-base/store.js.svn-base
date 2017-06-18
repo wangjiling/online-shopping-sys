@@ -1,0 +1,8 @@
+// Store bean fields defines.
+
+module.exports = function(){
+    this.id = 0;
+    this.title = "";
+    this.description = "";
+    this.storeLogoImage = "";
+}

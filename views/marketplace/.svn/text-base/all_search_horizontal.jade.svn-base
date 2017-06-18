@@ -1,0 +1,72 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/search_panel.js",language="javascript")
+    script(type="text/javascript",language="JavaScript").
+        $(document).ready(function() {
+            loadSearchPageTitle();
+        })
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/product_horizontal.css')
+
+
+block content
+    div.container
+        div.section
+            div.search-h
+                div.title
+                    h2 Search Results
+                    span (All)
+                div.cf
+                    div.result.cf
+                        ul
+                            each itemInfo in pageInfo.showList
+                                li
+                                    div.pic
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a(href="#{contextPath}/product/product_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                        -else if(itemInfo.type == "DEAL")
+                                            a(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                        -else if(itemInfo.type == "STORE")
+                                            a(href="#{contextPath}/store/store_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                    div.text
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a.txt(href="#{contextPath}/product/product_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+                                        -else if(itemInfo.type == "DEAL")
+                                            a.txt(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+                                        -else if(itemInfo.type == "STORE")
+                                            a.txt(href="#{contextPath}/store/store_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+
+                                        -if(itemInfo.type != "STORE")
+                                            span $#{itemInfo.nowPrice}
+                                    div.purchase
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a(href="#{contextPath}/product/product_id=#{itemInfo.id}",title="Purchase Now") Purchase Now
+                                        -else if(itemInfo.type == "DEAL")
+                                            a.a-deal(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}",title="View Deal") View Deal
+                                        -else if(itemInfo.type == "STORE")
+                                            a.a-store(href="#{contextPath}/store/store_id=#{itemInfo.id}",title="Visit Store") Visit Store
+                    div.paging
+                        div.cf.pagination-foot(id="deal_list_page_area")
+                            -if(pageInfo.showList.length > 0)
+                                -if(pageInfo.canLeftPage > 0)
+                                    - var previousPage = parseInt(pageInfo.willShowPage) - 1
+                                        a(href="#action",name="previousLink",willpage='#{previousPage}')
+                                            span.sp1 &lt;&lt;Previous
+                                        span.sp2 |
+                                        span.sp2 Page:
+                                        a(href="#action",name="previousPageLink")
+                                            span.sp2 #{previousPage}
+                                        span.sp2 #{pageInfo.willShowPage}
+                                        -if(pageInfo.canRightPage > 0)
+                                            - var nextPage = parseInt(pageInfo.willShowPage) + 1
+                                                a(href="#action",name="nextPageLink") #{nextPage}
+                                                a(href="#Action") ...
+                                                span.sp2 |
+                                                a(href="#action",name="nextLink",willpage='${nextPage}') Next

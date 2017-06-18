@@ -1,0 +1,50 @@
+extends ../layout
+
+block scripts
+    // add scripts
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/paid-success.css')
+
+block content
+    div.container
+        div.section.cf
+                div.step-thr2
+                    div.steps.
+                        Check Cart
+                    div.steps.
+                        Confirm Order
+                    div.steps.onhover.
+                        Pay Now
+                    div.steps.
+                        Confirm Shipment
+                    div.steps.
+                        Feedback
+        div.section.cf
+            div.s-s
+                h3.
+                    Your Order submit successfully,We will quickly dispatch
+                div.s-py
+                    p
+                        |Order Number:
+                        em.in_line(name="order_number")
+                            #{orderAction.orderNumber}
+
+                    p
+                        |Money:$
+                        span(name="total_price")
+                            #{orderAction.totalPrice}
+
+                div.s-now
+                    h4.
+                        Now you can:
+                    p
+                        a(href="$!{context-path}/").
+                            SHOPPING
+                        ||
+                        a(href="$!{context-path}/usercenter/").
+                            LOOK INTO ORDER
+
+
+

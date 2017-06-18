@@ -1,0 +1,54 @@
+div.oc-bd-r(id="panel_order_list")
+    div.oc-bd-r1
+        h3 Order List
+
+        div.bd-r1-m
+            div.bd-r1-m3
+                table(cellpadding="0",cellspacing="0")
+                    thead
+                        tr
+                            th.td1 Order Content
+                            th.td2 Price
+                            th.td2 Amount
+                            th.td2 Transaction Status
+                            th.td2 Total
+
+                    tbody.hid_template.order_row(name='order_row')
+                    tr.tr1
+                        td(colspan="5")
+                            span Order Numbers:
+                                p.in_line(name="order_number")
+                            span Clinch a deal time:
+                                p.in_line(name="clinch_date")
+                    tr.tr3.hid_template.order_item
+                        td.td1
+                            div.pic
+                                a(name="product_url", href="#action")
+                                    img(name="product_image")
+                            div.txt
+                                a(name="product_url", href="#action")
+                                    p.in_line(name="product_name")
+                                p(name="product_summary")
+                        td.td2
+                            span $
+                                p.in_line(name="product_price")
+                        td.td2(name="product_count") 1
+                        td.td2(rowspan="2",name="order_status_column")
+                            a(name="order_status",href="#action")
+                        td.td2(rowspan="2",name="total_price_column")
+                            span $
+                                p.in_line(name="total_price")
+                                br
+                                |(carriage:$
+                                p.in_line(name='shipment_price')
+                                |)
+                    tr.tr5(name="order_deal_actions_section")
+                        td(colspan="5")
+                            input(type="hidden",name="order_id", value="")
+                            input(type="hidden", name="paypal_id", value="")
+                            button.bt-buy(name="btn_buy_now") Buy Now
+                            button.bt-cancel(name="btn_cancel") Cancel
+                            button.bt-confirm(name="btn_confirm") Confirm
+                    tfoot.order_list_foot
+            div.paging
+                div.cf(id="product_list_page_area")

@@ -1,0 +1,32 @@
+div.shop-cart-div(id="header_bar_shopping_cart_items_div")
+    div.shop-cart-goods.cf.hid_template
+        div.shop-cart-l
+            a(name="show_product",href="#action")
+                img(name='product_icon',src="#{contextPath}/static/pics/b.jpg")
+        div.shop-cart-m.cut
+            a(name="product_name").
+                product_name
+        div.shop-cart-r
+            p
+                |$
+                span(name="nowPrice")
+                    |0
+                X
+                em(name="count")
+                    |0
+    div.shop-cart-total
+        p
+            span(name="header_bar_shopping_cart_items")
+                |0
+            |Items
+
+        p
+            |Total:
+            span(name="header_bar_shopping_cart_total")
+                |$0
+
+        p
+            button.bt-check1(onclick="window.location='#{contextPath}/cart/list'").
+                CheckOut
+
+

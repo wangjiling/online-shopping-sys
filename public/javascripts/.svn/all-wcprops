@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/yb_ecommerce/!svn/ver/1807/consumer-center-nodejs/trunk/public/javascripts
+END
+login_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/login_page.js
+END
+header_bar_template.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/header_bar_template.js
+END
+groupbuy_center_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/groupbuy_center_page.js
+END
+home_map_search.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/home_map_search.js
+END
+remain.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/remain.js
+END
+commons.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yb_ecommerce/!svn/ver/1800/consumer-center-nodejs/trunk/public/javascripts/commons.js
+END
+product_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/product_page.js
+END
+groupbuy_locality.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/groupbuy_locality.js
+END
+jquery-ui-1.8.14.custom.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery-ui-1.8.14.custom.min.js
+END
+jquery.number_format.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery.number_format.js
+END
+jquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery.js
+END
+timer.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/timer.js
+END
+deal_detail_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/deal_detail_page.js
+END
+user_information.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/user_information.js
+END
+search_panel.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yb_ecommerce/!svn/ver/1807/consumer-center-nodejs/trunk/public/javascripts/search_panel.js
+END
+you_also_like_roll.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/you_also_like_roll.js
+END
+jquery.cookie.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery.cookie.js
+END
+store_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1805/consumer-center-nodejs/trunk/public/javascripts/store_page.js
+END
+social_share.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/social_share.js
+END
+received_confirm_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/received_confirm_page.js
+END
+fb_FB.Share.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/fb_FB.Share.js
+END
+signup_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/signup_page.js
+END
+jquery-1.5.1.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery-1.5.1.min.js
+END
+all_deals_map_search.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/all_deals_map_search.js
+END
+order_detail_input_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/order_detail_input_page.js
+END
+groupbuy_all_deals_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/groupbuy_all_deals_page.js
+END
+user_center_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/user_center_page.js
+END
+dealorder_received_confirm_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/dealorder_received_confirm_page.js
+END
+minjquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/minjquery.js
+END
+location_info.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/location_info.js
+END
+home_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yb_ecommerce/!svn/ver/1806/consumer-center-nodejs/trunk/public/javascripts/home_page.js
+END
+check_cart_list_count.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/check_cart_list_count.js
+END
+deal_purchase_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/deal_purchase_page.js
+END
+shopping_cart_page.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/shopping_cart_page.js
+END
+socials.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/socials.js
+END
+order_list_template.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/order_list_template.js
+END
+point_calculator.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/public/javascripts/point_calculator.js
+END
+jquery.livequery.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/public/javascripts/jquery.livequery.js
+END

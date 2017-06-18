@@ -1,0 +1,28 @@
+block content
+    div(style="color:#fff")
+        script(type="text/javascript", src="#{contextPath}/javascripts/jquery-1.5.1.min.js")
+        h1(style="color:#000;") Upload an image.
+        form(action='#{contextPath}/uploadImage', enctype='multipart/form-data',method='post')
+            img(name="viewImg",src="",style="width:100px;height:100px;display:none")
+            br
+            br
+            input(type='file',name='upload',multiple='multiple')
+            input(type='submit',value='Upload')
+            script.
+                $(function(){
+                    $("[name='upload']").change(function(){
+                        var size = this.files[0].size/1024;
+                        if(size > 1024){
+                            $(this).val("");
+                            alert("The Image Size Must Less Than 1Mb!");
+                        }
+                        if (this.files && this.files[0]) {
+                            var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    $('[name="viewImg"]').attr('src', e.target.result).show();
+                                }
+                            reader.readAsDataURL(this.files[0]);
+                        }
+                    })
+                })
+

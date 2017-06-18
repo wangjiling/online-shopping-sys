@@ -1,0 +1,24 @@
+
+div.hid_template(id="add_product_box")
+    div(class="box-m cf")
+        div.pic
+            a(href="#Action",id="add_product_box_productHref")
+                img(id="add_product_box_productImage" ,src="#{contextPath}/pics/2.jpg")
+        div.txt
+            div.title
+                p
+                    a(href="#Action", id="add_product_box_productName")
+            div.number
+                p   Added To Count:
+                    span(id="add_product_box_current_count")
+                p   Count In ShoppingCart:
+                    span(id="add_product_box_count")
+                p   Total:
+                    span(id="add_product_box_countPrice")
+                p(style="color: red;" ,id="")
+            div.bt
+                button(class="bt-continue") Continue
+                button(class="bt-check2", onclick="window.location='#{contextPath}/cart/list'") Check Out
+
+
+

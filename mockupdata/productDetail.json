@@ -1,0 +1,10 @@
+{
+    "storeName": "Apple",
+    "storeLogo": "images/touchStore.jpg",
+    "productName": "Touch 3gs",
+    "majorImage": "images/to1.jpg",
+    "marketPrice": "399.99",
+    "nowPrice": "299.99",
+    "offPercent": "0.25",
+    "property": "groupBuy"
+}

@@ -1,0 +1,17 @@
+div.header-nav.cf
+    div.menu
+        ul(name='home_category_root')
+        ul.hid_template
+            li(name='category_branch')
+                a.parents(name='category_link')
+                    em
+                    i
+                ul.child(name="category_children")
+
+    div.search.generic_search_bar
+
+        div.textbox
+            input.txt(type="text",name="keywords",id="search_keywords_text",placeholder="Keywords")
+            a(id="btn_generic_search",title="Search")
+                |Search
+

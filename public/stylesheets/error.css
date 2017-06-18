@@ -1,0 +1,33 @@
+/*error---S*/
+.container .section .error {
+    margin: 40px auto;
+    border: 1px solid #c7c7c7;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    overflow:hidden;
+    background-color: #edf6ff;
+}
+
+.container .section .error .error-bd .cry {
+    width: 750px;
+    min-height: 80px;
+    margin: 100px auto;
+    background: url(../images/cry.png) no-repeat scroll 0 0;
+    padding-left: 120px;
+}
+
+.container .section .error .error-bd .cry h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #ff0000;
+}
+
+.container .section .error .error-bd .cry p {
+    font-size: 16px;
+    line-height: 32px;
+    color: #858788;
+    text-align:right;
+    padding:20px 20px 0 0;
+}

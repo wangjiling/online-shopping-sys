@@ -1,0 +1,22 @@
+div.local-sell.cf
+    div.featured
+        div.title
+            h3.
+                Featured Products
+
+            p.
+                The biggest,best deals for our merchants straight to you.
+
+        div.products.cut
+            ul.local_products_list(id="local_products_list")
+                li.hid_template.product_thumbnail
+                    a.pic.lnk_product_image(href="#{contextPath}/inbuilding")
+                        img.product_major_image
+
+                    a.text.cut.lnk_product_name(title="",href="#{contextPath}/inbuilding")
+                        p.product_name
+
+                    span
+                        |$
+                        p.product_now_price.in_line
+    include map_search

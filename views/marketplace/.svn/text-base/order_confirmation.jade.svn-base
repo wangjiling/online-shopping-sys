@@ -1,0 +1,40 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src='#{contextPath}/javascripts/signup_page.js', language='javascript', type='text/javascript')
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/order-confirmation.css')
+
+block content
+    div.container
+        div.section.cf
+            div.step-thr.step-thr3
+                div.step1.
+                    My Shopping Cart
+                div.step2.
+                    Check  Out  Order
+                div.step3.onhover.
+                    Submit Successfully
+        div.section.cf
+            div.s-s
+                h3 Your Order submit successfully,We will quickly dispatch
+                each order in orderList.orders
+                    div.s-py
+                        p Order Number:
+                            em.in_line(name="order_number") #{order.orderNumber}
+                        p Money:$
+                            span(name="order_price") #{order.totalPrice}
+                div.s-py2
+                    span Total Price:
+                        p.in_line(name="orders_total_price")
+                            #{orderList.totalOrderPrice}
+                div.s-now
+                    h4 Now you can:
+                    p
+                        a(href="#{contextPath}/") SHOPPING
+                        |
+                        a(href="#{contextPath}/usercenter/") LOOK INTO ORDER
+

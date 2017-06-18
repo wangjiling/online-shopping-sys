@@ -1,0 +1,130 @@
+.groupbuy-center{
+    float: right;
+    width: 749px;
+}
+.groupbuy-center h3{
+    font-size: 30px;
+    line-height: 50px;
+    padding-left: 10px;
+    background-image: -moz-linear-gradient(center top , #fbfbfb, #FFFFFF 100%);
+    -moz-border-radius:  5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.groupbuy-center .tabs{
+    border-bottom: 2px solid #1495E9;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #ececec 100%);
+}
+.groupbuy-center .tabs a{
+    float: left;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #1495E9;
+    border-top:2px solid #1495E9;
+    border-left:2px solid #1495E9;
+    border-right:2px solid #1495E9;
+    -moz-border-radius:  8px 8px 0 0;
+    -webkit-border-radius:  8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
+    color:white;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0 5px -2px;
+}
+.groupbuy-center .tabs a:hover{
+    color:#333;
+    background-color: white;
+}
+.groupbuy-center .tabs .onhover{
+    color:#333;
+    background-color: white;
+}
+.groupbuy-center .list{
+    padding: 20px 10px;
+}
+.groupbuy-center .list table{
+    width: 100%;
+}
+.groupbuy-center .list table .noborder{
+    border: 0;
+}
+.groupbuy-center .list table td{
+    text-align: center;
+    border-right: 1px solid #ababab;
+}
+.groupbuy-center .list table th{
+    background-color: #F4F3F3;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    border-right: 1px solid #ababab;
+}
+.groupbuy-center .list table a{
+    font-weight: 700;
+}
+.groupbuy-center .list .number span{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 20px 0 10px;
+    float: left;
+    font-size: 12px;
+}
+.groupbuy-center .list .info{
+    background-color: #F4F3F3;
+}
+.groupbuy-center .list .info div{
+    float: left;
+    padding: 10px;
+}
+.groupbuy-center .list .info .pic img{
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #D3D3D3;
+}
+.groupbuy-center .list .info .text p{
+    display: block;
+    line-height: 26px;
+    height: 26px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-align: left;
+}
+.groupbuy-center .list .info span{
+    font-size: 14px;
+    color: red;
+    font-weight: 700;
+}
+.groupbuy-center .list .action td{
+    padding: 20px 0;
+    text-align: right;
+}
+.groupbuy-center .list .coupon{
+    display: none;
+}
+.groupbuy-center .list .coupon td{
+    padding: 20px 10px;
+}
+.groupbuy-center .list .coupon td .pic{
+    float: left;
+    padding: 10px;
+}
+.groupbuy-center .list .coupon td .pic img{
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #ababab;
+}
+.groupbuy-center .list .coupon td .title{
+    height: 20px;
+    overflow: hidden;
+    padding: 20px 0;
+    text-overflow: ellipsis;
+    text-align:left;
+    width:150px;
+}
+.groupbuy-center .list .coupon .even{
+    background-color: #F4F3F3;
+}

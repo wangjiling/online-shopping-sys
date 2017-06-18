@@ -1,0 +1,73 @@
+var User = require("../beans/user").User;
+var user1 =  require("../mockupdata/user1.json");
+var sampleBuz = require("../business").sample1;
+var dealIcon = require("../mockupdata/dealIcon.json");
+var categoryTree = require("../mockupdata/categoryTree.json");
+var searchProductIcon = require('../mockupdata/searchProductIcon.json');
+
+exports.index = function(req, res, renderFun){
+
+    var user2 = new User();
+    user1.name = "1";
+    user1.sex = 'm';
+    user2.name = "2";
+    user2.sex = 'f';
+
+    res.render('index', { title: 'Home' , user1: JSON.stringify(user1), user2: JSON.stringify(user2)})
+}
+
+/**
+ * Sample source for learning.
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.sample1 = function(req, res, renderFun){
+    var user2 = new User();
+    user1.name = req.params.name;
+    user1.sex = 'm';
+    user2.name = "2";
+    user2.sex = 'f';
+
+    sampleBuz();
+
+    renderFun(req, res, { title: 'Express' , user1: JSON.stringify(user1), user2: JSON.stringify(user2)}, 'sample1');
+
+}
+
+
+/**
+ * Get home top deal data
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.loadHomeTopDeal = function(req, res, renderFun){
+    renderFun(req, res, dealIcon);
+//    res.writeHead(200, {"Content-Type": 'text/plain; charset=utf-8'});
+//    res.end(JSON.stringify(dealIcon));
+//    var data = dealIcon;
+//    renderFun(req, res, {data:data},"common/ajax_json_data");
+}
+
+
+/**
+ * Get home nav
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.getCategories = function(req, res, renderFun){
+    renderFun(req, res, categoryTree);
+}
+
+/**
+ * Get hot sell product
+ * @param req
+ * @param res
+ * @param renderFun
+ */
+exports.loadHotSale = function(req, res, renderFun){
+    renderFun(req, res, searchProductIcon);
+}
+

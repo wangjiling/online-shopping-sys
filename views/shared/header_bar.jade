@@ -1,0 +1,33 @@
+input(type="hidden",id="user_name",name="user_name",value="")
+div.header-bar
+    div.nav(name="top_navigator_bar")
+        a.options(href="#{contextPath}/").
+            Home
+        ||
+        a.options(href="#{contextPath}/usercenter/user_profile").
+            My Yagod
+        ||
+        span.cart-span(name="header_bar_cart_short_info")
+            a.options.cart.cut(href="#{contextPath}/cart/list")
+                i
+                |Cart(
+                span.cart-count(name="header_bar_shopping_cart_count").
+                    #{cartNumber})
+            include cart_list_box
+        ||
+        -if(session.userInfo != null && session.userInfo != "")
+            a.options().
+                Hello, #{session.userInfo.userName}
+            a.options.logout(href="#{contextPath}/logout").
+                Logout
+        -else
+            a.options(id="login",href="#{contextPath}/login").
+                Sign In
+            ||
+            a.options(id="register",href="#{contextPath}/signup").
+                Register
+        ||
+        a.options(href="#{contextPath}/inbuilding").
+            Help
+
+

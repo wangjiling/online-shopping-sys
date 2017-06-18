@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/yb_ecommerce/!svn/ver/1801/consumer-center-nodejs/trunk/views/shared
+END
+header_bar.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1758/consumer-center-nodejs/trunk/views/shared/header_bar.jade
+END
+head.jade
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/views/shared/head.jade
+END
+share.jade
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yb_ecommerce/!svn/ver/1757/consumer-center-nodejs/trunk/views/shared/share.jade
+END
+header_banner.jade
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yb_ecommerce/!svn/ver/1758/consumer-center-nodejs/trunk/views/shared/header_banner.jade
+END
+tabs.jade
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/views/shared/tabs.jade
+END
+common_js.jade
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yb_ecommerce/!svn/ver/1753/consumer-center-nodejs/trunk/views/shared/common_js.jade
+END
+add_product_box.jade
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yb_ecommerce/!svn/ver/1778/consumer-center-nodejs/trunk/views/shared/add_product_box.jade
+END
+footer_default.jade
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1758/consumer-center-nodejs/trunk/views/shared/footer_default.jade
+END
+top_recommend_deal.jade
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/yb_ecommerce/!svn/ver/1801/consumer-center-nodejs/trunk/views/shared/top_recommend_deal.jade
+END
+messages_box.jade
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yb_ecommerce/!svn/ver/1780/consumer-center-nodejs/trunk/views/shared/messages_box.jade
+END
+featured_products.jade
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yb_ecommerce/!svn/ver/1757/consumer-center-nodejs/trunk/views/shared/featured_products.jade
+END
+user_profile.jade
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/views/shared/user_profile.jade
+END
+header_nav.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1760/consumer-center-nodejs/trunk/views/shared/header_nav.jade
+END
+navbar.jade
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/views/shared/navbar.jade
+END
+header_default.jade
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1742/consumer-center-nodejs/trunk/views/shared/header_default.jade
+END
+common_css.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1752/consumer-center-nodejs/trunk/views/shared/common_css.jade
+END
+order_list.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/views/shared/order_list.jade
+END
+groupbuy_customer_reviewer.jade
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/yb_ecommerce/!svn/ver/1778/consumer-center-nodejs/trunk/views/shared/groupbuy_customer_reviewer.jade
+END
+groupbuy_center.jade
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/views/shared/groupbuy_center.jade
+END
+social_asyn_load.jade
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yb_ecommerce/!svn/ver/1746/consumer-center-nodejs/trunk/views/shared/social_asyn_load.jade
+END
+map_search.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1757/consumer-center-nodejs/trunk/views/shared/map_search.jade
+END
+us_states_with_capital.jade
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/yb_ecommerce/!svn/ver/1757/consumer-center-nodejs/trunk/views/shared/us_states_with_capital.jade
+END
+hot_sale_products.jade
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yb_ecommerce/!svn/ver/1758/consumer-center-nodejs/trunk/views/shared/hot_sale_products.jade
+END
+cart_list_box.jade
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/yb_ecommerce/!svn/ver/1759/consumer-center-nodejs/trunk/views/shared/cart_list_box.jade
+END

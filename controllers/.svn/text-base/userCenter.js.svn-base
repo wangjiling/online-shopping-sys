@@ -1,0 +1,3 @@
+exports.userCenter = function(req, res, renderFun){
+    renderFun(req, res, {title:'My YellConnect - Purchasing History', sel_panel:req.params.panel}, 'marketplace/user_center');
+}

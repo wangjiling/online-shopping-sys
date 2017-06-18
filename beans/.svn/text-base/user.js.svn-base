@@ -1,0 +1,9 @@
+// User bean fields defines.
+exports.User = function(){
+    return {
+        firstname: "",
+        lastname: "",
+        password: "",
+        introduction: ""
+    }
+}

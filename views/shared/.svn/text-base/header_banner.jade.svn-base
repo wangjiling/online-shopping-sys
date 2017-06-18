@@ -1,0 +1,22 @@
+div.banner.cf
+    a(href="#{contextPath}/",title="Weforia")
+        h1.logo
+            img(src="#{contextPath}/images/logo.png",alt="Weforia")
+    div.ad
+        a(href="#{contextPath}/usercenter/user_profile")
+            img(src="#{contextPath}/pics/ren.png")
+
+            p.
+                My Points
+
+        a(href="#action")
+            img(src="#{contextPath}/pics/pig.png")
+
+            p.
+                Earn Points
+        a(href="#action")
+            img(src="#{contextPath}/pics/monery.png")
+
+            p.
+                Use Points
+

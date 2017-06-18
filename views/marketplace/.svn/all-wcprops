@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/yb_ecommerce/!svn/ver/1826/consumer-center-nodejs/trunk/views/marketplace
+END
+user_center.jade
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/views/marketplace/user_center.jade
+END
+product_search_horizontal.jade
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/product_search_horizontal.jade
+END
+deal_horizontal.jade
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/deal_horizontal.jade
+END
+product.jade
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yb_ecommerce/!svn/ver/1826/consumer-center-nodejs/trunk/views/marketplace/product.jade
+END
+order_confirmation.jade
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/yb_ecommerce/!svn/ver/1779/consumer-center-nodejs/trunk/views/marketplace/order_confirmation.jade
+END
+dealorder_received_confirm.jade
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/yb_ecommerce/!svn/ver/1791/consumer-center-nodejs/trunk/views/marketplace/dealorder_received_confirm.jade
+END
+cart_list.jade
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1780/consumer-center-nodejs/trunk/views/marketplace/cart_list.jade
+END
+all_search_vertical.jade
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/all_search_vertical.jade
+END
+store_search_horizontal.jade
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/store_search_horizontal.jade
+END
+store.jade
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/yb_ecommerce/!svn/ver/1799/consumer-center-nodejs/trunk/views/marketplace/store.jade
+END
+deal_vertical.jade
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/deal_vertical.jade
+END
+received_confirm.jade
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/yb_ecommerce/!svn/ver/1793/consumer-center-nodejs/trunk/views/marketplace/received_confirm.jade
+END
+paid_success.jade
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/yb_ecommerce/!svn/ver/1779/consumer-center-nodejs/trunk/views/marketplace/paid_success.jade
+END
+all_search_horizontal.jade
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/yb_ecommerce/!svn/ver/1810/consumer-center-nodejs/trunk/views/marketplace/all_search_horizontal.jade
+END
+order_detail_input.jade
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/yb_ecommerce/!svn/ver/1809/consumer-center-nodejs/trunk/views/marketplace/order_detail_input.jade
+END

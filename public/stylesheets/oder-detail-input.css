@@ -1,0 +1,239 @@
+/*order_detail_input*/
+.container .section .step-thr {
+    height: 32px;
+    line-height: 32px;
+    background: url(../images/c-step2.png) no-repeat scroll 0 0;
+}
+
+.container .section .step-thr .step1, .container .section .step-thr .step2, .container .section .step-thr .step3 {
+    width: 326px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    float: left;
+}
+
+.container .section .step-thr .onhover {
+    color: #333333;
+}
+
+.container .section .order{
+    border:1px solid #c7c7c7;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    overflow:hidden;
+    background-color:white;
+}
+
+.container .section .order .order-t {
+    height: 50px;
+    background: url("../images/search-t-bg.png") repeat-x scroll 0 0;
+}
+
+.container .section .order .order-t h2 {
+    font-size: 18px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+
+.container .section .order .order-m {
+    padding: 20px;
+}
+
+.container .section .order .order-m .o-m {
+    width: 940px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+.container .section .order .order-m .o-m .o-m-hd {
+    width: 940px;
+    height: 37px;
+    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;
+    line-height: 37px;
+    background: url(../images/order-m-t.png) repeat-x scroll 0 0;
+}
+
+.container .section .order .order-m .o-m .o-m-hd h3 {
+    padding-left: 10px;
+}
+
+.container .section .order .order-m .o-m .o-m-bd {
+    width: 940px;
+    float: left;
+}
+
+.container .section .order .order-m .o-m .m-bd1 {
+    background: #e5f3fd;
+    width: 902px;
+    padding: 10px 20px;
+}
+
+.container .section .order .order-m .o-m .m-bd1 p {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.container .section .order .order-m .o-m .m-bd1 .p1 {
+    width: 300px;
+    float: left;
+}
+
+.container .section .order .order-m .o-m .m-bd1 p input {
+    border: 1px solid #8db7dd;
+    height: 18px;
+}
+
+.container .section .order .order-m .o-m .m-bd1 p .txt1 {
+    width: 180px;
+}
+
+.container .section .order .order-m .o-m .m-bd1 p .txt2 {
+    width: 400px;
+}
+
+.container .section .order .order-m .o-m .m-bd1 p .txt4 {
+    width: 150px;
+}
+
+.container .section .order .order-m .o-m .m-bd1 span {
+    width: 100px;
+    display: inline-block;
+}
+
+.container .section .order .order-m .o-m .m-bd2 {
+    background: #e5f3fd;
+    width: 902px;
+    padding: 10px 20px;
+}
+
+.container .section .order .order-m .o-m .m-bd2 p {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.container .section .order .order-m .o-m .m-bd2 span {
+    padding-left: 10px;
+}
+
+.container .section .order .order-m .o-m .m-bd2 a {
+    margin: 0 10px;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table {
+    width: 942px;
+    border-right: 1px solid #bbbbbb;
+    border-left: 1px solid #bbbbbb;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table th {
+    font-size: 14px;
+    height: 26px;
+    font-weight: 700;
+    background: #fbf5ce;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table td, .container .section .order .order-m .o-m .m-bd3 table th {
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 {
+    width: 430px;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 .m-img {
+    width: 54px;
+    padding: 10px;
+    float: left;
+    overflow: hidden;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 img {
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #d3d3d3;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 .m-txt {
+    width: 350px;
+    padding-top: 10px;
+    font-size: 12px;
+    float: left;
+    overflow: hidden;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 .m-txt a {
+    color: #3b95db;
+    text-decoration: none;
+    display:block;
+    height: 18px;
+    line-height: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 .m-txt a:hover {
+    color: #f00;
+    text-decoration: none;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td1 .m-txt p {
+    padding-top: 18px;
+    line-height: 18px;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td2 {
+    width: 240px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.container .section .order .order-m .o-m .m-bd3 table .td2 span {
+    color: #f00;
+}
+
+.container .section .order .order-m .o-m .m-bd4 {
+    background: #fbf5ce;
+    width: 902px;
+    padding: 10px 20px;
+}
+
+.container .section .order .order-m .o-m .m-bd4 p {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 0;
+}
+
+.container .section .order .order-m .o-m .m-bd4 span {
+    width: 100px;
+    display: inline-block;
+}
+
+.container .section .order .order-m .o-m .m-bd4 .em1 {
+    color: #f00;
+}
+
+.container .section .order .m-bt {
+    padding-top: 20px;
+    text-align: right;
+}
+
+/*.container .section .order .m-bt input {*/
+    /*width: 180px;*/
+    /*height: 33px;*/
+    /*background: url(../images/cart-bt.png) no-repeat scroll 0 0;*/
+    /*color: #fff;*/
+    /*font-size: 20px;*/
+    /*font-weight: 700;*/
+    /*text-align: center;*/
+    /*margin: 0 20px;*/
+    /*border: none;*/
+    /*cursor: pointer;*/
+/*}*/
+

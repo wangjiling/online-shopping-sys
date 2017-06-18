@@ -1,0 +1,44 @@
+div.user-profile.g-radius
+    h3 User Profile
+    div#user_profile_panel.info.cf
+        div.photo
+            a(href='#Action')
+                img(name='user_pic', src='#{contextPath}/pics/ren.png')
+        div.detail
+            p
+                span Name:
+                em(name='userName')
+            p
+                span Sex:
+                em(name='sex')
+            p
+                span Email:
+                em(name='email')
+        div.description
+            p
+                span First Name :
+                em(name='firstName')
+            p
+                span Passport :
+                em(name='passport')
+            p
+                span Last Name :
+                em(name='lastName')
+            p
+                span Birthday :
+                em(name='birthday')
+            p
+                span Created :
+                em(name='created')
+            p
+                span Address :
+                em(name='address')
+            p
+                span Modified :
+                em(name='modified')
+            p
+                span Login Number :
+                em(name='loginNum')
+            p
+                span Reward Points :
+                em(name='reward_points')

@@ -1,0 +1,32 @@
+input(type="hidden",id="user_name",name="user_name",value="")
+div.header-bar
+    div.share
+        div.g-plusone.gp-like-top(name="gp_domain_like",data-size="medium",data-annotation="none")
+        a.twitter-share-button.tw-like-top(name="tw_domain_like",href="https://twitter.com/share",data-count="none").
+            Tweet
+        div.fb-like.fb-like-header_top(name="fb_domain_like",data-layout="button_count",data-show-faces="false")
+    div.nav(name="top_navigator_bar")
+        a.options(href="/groupbuy/all_deals).
+            Group Buy
+        ||
+        a.options(href="#{contextPath}/").
+            Home
+        ||
+        a.options(href="#{contextPath}/usercenter/).
+            My Weforia
+        ||
+        span.cart-span(name="header_bar_cart_short_info")
+            a.options.cart.cut(href="#{contextPath}/cart/list)
+                i
+                |Cart(
+                span.cart-count(name="header_bar_shopping_cart_count").
+                    0)
+            include cart_list_box
+        ||
+        a.options(id="login",href="#{contextPath}/login").
+            Sign In
+        ||
+        a.options(href="#{contextPath}/inbuilding").
+            Help
+
+

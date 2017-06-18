@@ -1,0 +1,42 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/dealorder_received_confirm_page.js)
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/order-confirmation.css')
+
+block content
+    div.container
+        div.section.cf
+            div.step-thr5
+                div.steps Buyer order
+                div.steps Seller affirm
+                div.steps Payment success
+                div.steps Deliver goods
+                div.steps.onhover Received goods
+        div.section.cf
+            div.s-s
+                h3 If you have received the goods, please confirm it.
+                div.s-py
+                    input(type="hidden",name="order_id",value="#{orderAction.orderId}")
+                    input(type="hidden",name="order_number",value="#{orderAction.orderNumber}")
+                    p Order Number:
+                        em.in_line(name="order_number")
+                            #{orderAction.orderNumber}
+                    p Money:$
+                        span(name="total_price")
+                            #{orderAction.totalPrice}
+                    -if(orderAction.status == "OrderComplete")
+                        p This order have been paid. Transaction is completed.
+                    -else if(orderAction.status == "Delivering" || orderAction.status == "WaitingShip")
+                        p
+                            button.bt-confirm(name="btn_confirm") Confirm
+                div.s-now
+                    h4 Now you can:
+
+                    p
+                        a(href="#{contextPath}/") SHOPPING
+                        ||
+                        a(href="#{contextPath}/usercenter/groupbuy/") LOOK INTO ORDER

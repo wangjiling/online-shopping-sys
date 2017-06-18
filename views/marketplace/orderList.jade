@@ -1,0 +1,64 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/shopping_cart_page.js",language="javascript",type="text/javascript")
+    script(src="#{contextPath}/javascripts/check_cart_list_count.js",language="javascript",type="text/javascript")
+    script(src='#{contextPath}/javascripts/order_detail_input_page.js')
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/cart-list.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/oder-detail-input.css')
+
+
+block content
+    div.container.cartList
+        div.section
+            div.s-cart
+                h2 My Shopping Order
+        div.section.cf
+            div.s-cart
+                div.s-cart-t
+                    h3 My Order List
+                div.s-cart-m
+                    - if(orderList.length > 0)
+                        table(border="0", align="center", cellpadding="0", cellspacing="0", name="cart_items_list")
+                            colgroup(valign="middle")
+                                col(width="130")
+                                col
+                                col(width="130")
+                                col(width="130")
+                            thead
+                                tr
+                                    th Order Number
+                                    th Goods
+                                    th Used Point
+                                    th Total Price
+                                    th Payment
+                                    th Date
+                                tbody(name='shopping_store_row')
+                                    - each order in orderList
+                                        tr(name='shopping_item_row')
+                                            input(type="hidden", name="orderId", value="#{order.orderId}")
+                                            td(name="orderNumber") #{order.orderId}
+                                            td.goods(name="item")
+                                                -each product in order.product
+                                                    p.product #{product}
+                                            td.usedPoint #{order.usedPoint}
+                                            td.totalPrice $#{order.totalPrice}
+                                            td.payment $#{order.payMoney}
+                                            td.createDate #{order.createDate}
+                    -else
+                        div.m-nog
+                            p
+                                span Your have no order. You Could:
+
+                            p
+                                a(href="#{contextPath}/") Shoping now
+                div.m-nog.hid_template
+                    p
+                        span Your have no order. You Could:
+
+                    p
+                        a(href="#{contextPath}/") Shoping now

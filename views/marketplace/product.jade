@@ -1,0 +1,80 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/product_page.js",language="javascript")
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/product.css', rel='stylesheet', type='text/css')
+
+block content
+
+
+    input(type="hidden",id="page_product_id",name="page_product_id",value="#{product.productId}")
+
+    //#parse("/include/header_v2.vm")
+    div.container
+        div.section
+            div.product
+                div(class="title cut",id="panel_website_path")
+                    div.website_path_line
+                        h2 Product Detail
+
+                div(class="detail cut",id="panel_product_basic_info")
+                    input(type="hidden" ,name="fb_share_title" ,value="")
+                    input(type="hidden" ,name="fb_share_summary" ,value="")
+                    input(type="hidden" ,name="fb_share_image" ,value="")
+                    div.information
+                        h2(name="panel_product_title")
+                            |    #{product.productName}
+
+                        div(class="price cf")
+                            dl
+                                dt    Regular Price:$#{product.marketPrice}
+                                dd(name="lbl_market_price")
+                            dl
+                                dt    You Pay:
+                                dd
+                                    span(name="now_price")  $#{product.nowPrice}
+                                    input#now_price(type="hidden", value="#{product.nowPrice}")
+                            dl
+                                dt  Discount:
+                                dd(name="discount")
+                                    span(name="discount")  #{discount}
+                    div.pic
+                        div(class="product-picture")
+                            a(href="#Action")
+                                img(name="major_image",src="#{product.majorImage}")
+                        div(class="description cut" ,name="description")   #{product.description}
+                    div.action
+                        div.buy-point
+                            h4  Earn 1 Points per $ 100 Spent
+                            div(class="counts")
+                                div(class="add-count")
+                                    a.minus    -
+                                    input(type="hidden" ,name="hid_stocks" ,value="#{product.stock}")
+                                    input(type="text" ,value="1" ,name="product_count" ,id="product_count")
+                                    a.plus  +
+                                    p.errorMsg(style='color: red;')
+                                div(class="now")
+                                    a.add( id='add_to_cart') Add Cart
+                                    a.buy-now(href="/cart/list") Buy Now
+                            div.points
+                                p   Allows you to
+                                    br
+                                    a(href="/cart/list")  Pay with Points
+                            div.benefits
+                                dl
+                                    dt   Points Benefits
+                                    dd   - Earn Points on this purchase
+                                    dd   - 1 Points = $ 1.00
+                                    dd   - No expiration or blackout dates
+                                    dd   - Spend Points for free stuff
+        div.section
+            include ../shared/groupbuy_customer_reviewer
+
+
+
+
+

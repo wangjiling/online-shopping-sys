@@ -1,0 +1,9 @@
+div.g-plus
+    div.g-plusone.gp-like-top(name="gp_domain_like",data-size="medium",data-annotation="none")
+div.twitter
+    img(name="tweet",onclick="return tw_tweet()",target="_blank",style="cursor:pointer;",title="tweet",src="http://a3.twimg.com/a/1294785484/images/goodies/tweetn.png")
+
+div.facebook
+    a(name="fb_share").
+        I Share It.
+

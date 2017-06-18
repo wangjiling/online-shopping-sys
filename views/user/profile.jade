@@ -1,0 +1,51 @@
+doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+    include ../shared/head
+    style(type='text/css').
+        #login {
+            position: relative;
+            width: 92%;
+            height: 200px;
+            padding: 1% 4%;
+            overflow: hidden;
+        }
+
+        .form_subject {
+            position: fixed;
+            left: 320px;
+        }
+
+        .form-input {
+            position: fixed;
+            left: 600px;
+        }
+body
+    <!--------------- START: PAGE CONTAINER --------------->
+    div.container
+
+        <!--------------- START: SEARCH AREA --------------->
+        div.headerarea
+            include ../shared/header_default
+        <!--------------- END: SEARCH AREA --------------->
+
+        <!--------------- START: NAVIGATION -------------->
+        div.tabsarea
+            -   var OnTab = 'PROFILE'
+            include ../shared/tabs
+            include ../shared/navbar
+        <!-------------- END: NAVIGATION --------------->
+
+        <!--------------- START: PAGE CONTENT --------------->
+        div.contentarea
+            div.leftmain
+                p This is my profile page.
+        <!--------------- END: PAGE CONTENT --------------->
+
+        <!--------------- START: FOOTER --------------->
+        div.footer
+            include ../shared/footer_default
+        <!--------------- END: FOOTER --------------->
+
+    <!--------------- END: PAGE CONTAINER --------------->

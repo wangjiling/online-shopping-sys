@@ -1,0 +1,79 @@
+try {
+    var userInfo = new UserInformation();
+} catch(error) {
+}
+
+function initPointsCalculator(dealInfo) {
+    try {
+
+        // Sets current user earns points.
+        userInfo.loadUserInfo(function(data) {
+            $('[name=points_cal_hid_cur_balance]').val(data.rewardPoints);
+            $('[name=points_cal_cur_balance]').html(data.rewardPoints.formatDigit(0));
+        });
+
+
+        // Sets now price for points sim calculator.
+        var nowPrice = dealInfo.nowPrice.formatDigit(2);
+        if(nowPrice <= 0 ){
+            nowPrice = 1;
+        }
+        $("[name=points_cal_slider]").slider({
+            value:nowPrice,
+            min: 0,
+            max: nowPrice * 20,
+            step: nowPrice,
+            slide: function(event, ui) {
+                try {
+                    $("[name=points_cal_hid_sim_amount]").val(ui.value);
+                    $("[name=points_cal_sim_amount]").html(ui.value.formatDigit(0));
+                    calculatePointsNow();
+                } catch(error) {
+                }
+            }
+        });
+        $("[name=points_cal_slider]").find("a").attr('style', "position:absolute; width:21px; height:36px; top:-12px;left:20px;"
+                + "background: url(" + getURI("/static/images/calculator1.png") + ") no-repeat scroll 0 0;cursor: pointer;");
+        $("[name=points_cal_hid_sim_amount]").val($("[name=points_cal_slider]").slider("value"));
+        $("[name=points_cal_sim_amount]").html($("[name=points_cal_slider]").slider("value").formatDigit(0));
+
+        // Sets Deal points rate.
+        var rate = 1;
+        if (dealInfo.pointRate && (new Number(dealInfo.pointRate))) {
+            rate = dealInfo.pointRate;
+        }
+        $('[name=points_cal_points_rate]').html(rate);
+
+        var rateBaseNum = 10;
+        if (dealInfo.pointBase && (new Number(dealInfo.pointBase))) {
+            rateBaseNum = new Number(dealInfo.pointBase)
+        }
+        $('[name=points_cal_hid_deal_points_rate]').val(rate * rateBaseNum);
+
+        calculatePointsNow();
+
+
+    }catch(error) {
+    }
+
+}
+
+function calculatePointsNow() {
+    try {
+        // Sets now sim points.
+        var simAmount = $('[name=points_cal_hid_sim_amount]').val();
+        var pointsRate = $('[name=points_cal_hid_deal_points_rate]').val();
+        var simPoints = simAmount * pointsRate;
+        $('[name=points_cal_hid_sim_plus_balance]').val(simPoints);
+        $('[name=points_cal_sim_plus_balance]').html(simPoints.formatDigit(0));
+
+        var curPoints = $('[name=points_cal_hid_cur_balance]').val();
+
+        // Sets Total sim points.
+        var totalSimPoints = simPoints + new Number(curPoints);
+        $('[name=points_cal_hid_sim_result_balance]').val(totalSimPoints);
+        $('[name=points_cal_sim_result_balance]').html(totalSimPoints.formatDigit(0));
+
+    } catch(error) {
+    }
+}

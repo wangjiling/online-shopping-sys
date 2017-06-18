@@ -1,0 +1,3 @@
+exports.login = function(req, res, renderFun){
+    renderFun(req, res, {title:'pay confirmation', login_response_msg:'', fbApiKey:''}, 'paid_success');
+}

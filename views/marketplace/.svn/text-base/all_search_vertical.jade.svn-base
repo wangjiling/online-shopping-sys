@@ -1,0 +1,58 @@
+extends ../layout
+
+block scripts
+    // add scripts
+
+block stylesheets
+    // add style sheets
+
+block content
+    div.container
+        div.section
+            div.oc
+                div.where
+                    a(href="#{contextPath}/inbuilding") Home
+                    | >
+                    a(href="#{contextPath}/inbuilding") Products
+                    | >
+                    |Apparel
+        div.section
+            div.product-list
+            div.list-r
+                div.list-r-hd
+                div.list-r-bd
+                    div.list-r-bd1
+                        ul
+                            each itemInfo in pageInfo.showList
+                                li
+                                    div.pic
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a(href="#{contextPath}/product/product_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                        -else if(itemInfo.type == "DEAL")
+                                            a(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                        -else if(itemInfo.type == "STORE")
+                                            a(href="#{contextPath}/store/store_id=#{itemInfo.id}")
+                                                img(src="#{itemInfo.majorImage}",alt="#{itemInfo.name}")
+                                    div.text
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a.txt(href="#{contextPath}/product/product_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+                                        -else if(itemInfo.type == "DEAL")
+                                            a.txt(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+                                        -else if(itemInfo.type == "STORE")
+                                            a.txt(href="#{contextPath}/store/store_id=#{itemInfo.id}",title="#{itemInfo.name}") #{itemInfo.name}
+
+                                        -if(itemInfo.type != "STORE")
+                                            span $#{itemInfo.nowPrice}
+                                    div.purchase
+                                        -if(itemInfo.type == "PRODUCT")
+                                            a(href="#{contextPath}/product/product_id=$!{itemInfo.id}",title="Purchase Now") Purchase Now
+                                        -else if(itemInfo.type == "DEAL")
+                                            a.a-deal(href="#{contextPath}/groupbuy/deal/deal_id=#{itemInfo.id}",title="View Deal") View Deal
+                                        -else if(itemInfo.type == "STORE")
+                                            a.a-store(href="#{contextPath}/store/store_id=#{itemInfo.id}",title="Visit Store") Visit Store
+                div.list-r-ft
+
+
+

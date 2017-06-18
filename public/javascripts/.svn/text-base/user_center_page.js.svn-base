@@ -1,0 +1,52 @@
+$(document).ready(function() {
+    var selPanelVal = $('#hid_sel_panel').val();
+    if (selPanelVal != null){
+        if ("orderlist" == selPanelVal) {
+            loadOrderList();
+        }
+        if ("user_profile" == selPanelVal) {
+            loadUserProfile();
+        }
+    }
+})
+
+$(function() {
+    $('button[name=btn_cancel]').bind('click', function(e) {
+        cancelOrder(e);
+    })
+
+    $('button[name=btn_buy_now]').bind('click', function(e) {
+        buyWithPaypal(e);
+//        buyOrderNow(e);
+    })
+
+    $('button[name=btn_confirm]').bind('click', function(event) {
+        confirmReceivedOrder(event);
+    })
+})
+
+function loadUserProfile(){
+    var form = getForm(getURI('/usercenter/ajax/user_profile'));
+    ajaxRequest(form,
+        function(data) {
+            if (data) {
+                var user_profile_panel = $('#user_profile_panel');
+                user_profile_panel.find("[name=userName]").html(data.userName);
+                user_profile_panel.find("[name=sex]").html(data.sex);
+                user_profile_panel.find("[name=email]").html(data.email);
+                user_profile_panel.find("[name=passport]").html(data.passport);
+                user_profile_panel.find("[name=firstName]").html(data.firstName);
+                user_profile_panel.find("[name=lastName]").html(data.lastName);
+                user_profile_panel.find("[name=loginNum]").html(data.loginNum);
+                user_profile_panel.find("[name=birthday]").html(new Date(data.birthday).pattern("yyyy-MM-dd"));
+                user_profile_panel.find("[name=created]").html(new Date(data.created).pattern("yyyy-MM-dd"));
+                user_profile_panel.find("[name=modified]").html(new Date(data.modified).pattern("yyyy-MM-dd"));
+                user_profile_panel.find("[name=address]").html(data.address);
+                user_profile_panel.find("[name=reward_points]").html(data.rewardPoints);
+            }
+        }
+        , function() {
+
+        });
+}
+

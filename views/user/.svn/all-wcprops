@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/views/user
+END
+fb_login.jade
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/yb_ecommerce/!svn/ver/1751/consumer-center-nodejs/trunk/views/user/fb_login.jade
+END
+antispider_login.jade
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/yb_ecommerce/!svn/ver/1756/consumer-center-nodejs/trunk/views/user/antispider_login.jade
+END
+profile.jade
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/views/user/profile.jade
+END
+login.jade
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/yb_ecommerce/!svn/ver/1756/consumer-center-nodejs/trunk/views/user/login.jade
+END
+signup.jade
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/views/user/signup.jade
+END

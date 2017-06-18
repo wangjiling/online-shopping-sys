@@ -1,0 +1,21 @@
+
+block content
+    div(style="color:#fff;")
+        script(type="text/javascript", src="#{contextPath}/javascripts/jquery-1.5.1.min.js")
+        script.
+            var contextPath = '#{contextPath}';
+            $(function(){
+                var uploadImgUrl = $("input[name='hideUrl']").val();
+                if(/\s|<\/html>/mi.test(uploadImgUrl)){
+                    alert("Image upload failed");
+                    window.location = contextPath + "/uploadImage";
+                }else{
+                    $(parent.window.document).find(".photos img").attr({src:uploadImgUrl,imgUploaded:'true'});
+                    $(parent.window.document).find("input[name='image']").val(uploadImgUrl);
+                }
+                $(parent.window.document).find("#refreshImages").trigger("click");
+                window.location = contextPath + "/uploadImage";
+                $(parent.window.document).find(".dialog").hide();
+                $(parent.window.document).find("#shadow").hide();
+            })
+        input(type="hidden",value="#{imageUrl}",name="hideUrl")

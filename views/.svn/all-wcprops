@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yb_ecommerce/!svn/ver/1894/consumer-center-nodejs/trunk/views
+END
+layout.jade
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/yb_ecommerce/!svn/ver/1894/consumer-center-nodejs/trunk/views/layout.jade
+END
+sample1.jade
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/yb_ecommerce/!svn/ver/1800/consumer-center-nodejs/trunk/views/sample1.jade
+END
+sample2.jade
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/yb_ecommerce/!svn/ver/1769/consumer-center-nodejs/trunk/views/sample2.jade
+END
+index-antispider.jade
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/yb_ecommerce/!svn/ver/1743/consumer-center-nodejs/trunk/views/index-antispider.jade
+END
+index.jade
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/yb_ecommerce/!svn/ver/1800/consumer-center-nodejs/trunk/views/index.jade
+END

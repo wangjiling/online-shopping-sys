@@ -1,0 +1,22 @@
+div.banner.cf
+    label.storeLogo Yagod
+    -if(session.userInfo != null && session.userInfo != "")
+        span.welcome 欢迎来到Yagod！ 这是你第 #{loginNumber} 次登陆
+    div.ad
+        a(href="#{contextPath}/usercenter/user_profile")
+            img(src="#{contextPath}/pics/ren.png")
+
+            p.
+                My Points
+
+        a(href="#action")
+            img(src="#{contextPath}/pics/pig.png")
+
+            p.
+                Earn Points
+        a(href="#action")
+            img(src="#{contextPath}/pics/monery.png")
+
+            p.
+                Use Points
+

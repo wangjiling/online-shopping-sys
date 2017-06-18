@@ -1,0 +1,177 @@
+.all-deals .hd .deals-title{
+    border-bottom: 1px solid #8ed1f8;
+    padding: 10px;
+}
+.all-deals .hd .deals-title h2{
+    font-size: 36px;
+    line-height: 36px;
+    float: left;
+    margin-left: 10px;
+}
+.all-deals .hd .deals-title .group-search{
+    float: right;
+    margin-top: 3px;
+}
+.all-deals .hd .deals-title .group-search input[type="text"]{
+    width: 180px;
+    float: left;
+    margin: 3px 10px 0 0;
+    border: 1px solid #ababab;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 5px;
+    color: #666666;
+}
+.all-deals .hd .deals-type{
+    margin: 10px;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    background-color: #FCF6D7;
+    text-align: center;
+    height: 30px;
+}
+.all-deals .hd .deals-type p{
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.all-deals .bd{
+    padding: 10px;
+}
+.all-deals .bd .first-deal{
+    border: 1px solid #CCCCCC;
+    background-color: #EBEBEB;
+    background-image:-moz-linear-gradient(center top , #FAFAFA 0%, #EBEBEB 100%);
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#FAFAFA),  color-stop(100%, #EBEBEB));
+    background-image:-o-linear-gradient(top , #FAFAFA, #EBEBEB);
+    _background: none;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#EBEBEB');
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#EBEBEB')";
+    box-shadow: 1px 2px 3px 0 #CCCCCC;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.all-deals .bd .first-deal .picture{
+    float: left;
+    border: 1px solid #EBEBEB;
+    padding: 3px;
+    background-color: white;
+    height: 260px;
+    width: 430px;
+}
+.all-deals .bd .first-deal .picture img{
+    width: 430px;
+    height: 260px;
+}
+.all-deals .bd .first-deal .info{
+    float: right;
+    margin-right: 10px;
+    width: 460px;
+}
+.all-deals .bd .first-deal .info h3{
+    font-size: 36px;
+    line-height: 36px;
+    height: 38px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.all-deals .bd .first-deal .info h3 a{
+    color: #333;
+    text-decoration: none;
+}
+.all-deals .bd .first-deal .info h3 a:hover{
+    color: #333;
+    text-decoration: underline;
+}
+.all-deals .bd .first-deal .info .detail{
+    height: 44px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.all-deals .bd .first-deal .info p{
+    line-height: 22px;
+    font-size: 11px;
+    margin: 20px 0;
+}
+.all-deals .bd .first-deal .info p b{
+    font-size: 18px;
+}
+.all-deals .bd .first-deal .info p span{
+    font-size: 18px;
+    color: #777;
+}
+.all-deals .bd .first-deal .info p .bt{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px #555;
+    border: 1px solid #1372a9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #1495E9;
+    background-image:-moz-linear-gradient(0% 0 270deg, #95DCFD, #1495E9 50%);
+}
+.all-deals .bd .deals-list ul {
+    margin-left: -27px;
+}
+.all-deals .bd .deals-list ul li{
+    float: left;
+    background-color: #EBEBEB;
+    background-image: -moz-linear-gradient(center top , #FAFAFA 0%, #EBEBEB 100%);
+    border: 1px solid #CCCCCC;
+    box-shadow: 1px 2px 3px 0 #CCCCCC;
+    padding: 10px 10px 25px;
+    margin:0 0 15px 27px;
+    position:relative;
+}
+.all-deals .bd .deals-list ul li .sold-out{
+    background: url("../images/sold-out.png") no-repeat scroll left top;
+    height: 106px;
+    left: -5px;
+    position: absolute;
+    top: -1px;
+    width: 179px;
+    z-index: 1;
+}
+.all-deals .bd .deals-list ul li img{
+    border: 1px solid #EBEBEB;
+    padding: 3px;
+    background-color: white;
+    width: 270px;
+    height: 150px;
+}
+/*.all-deals .bd .deals-list ul li .info{*/
+    /*font-size:14px;*/
+    /*font-weight: 700;*/
+/*}*/
+.all-deals .bd .deals-list ul li .info a{
+    color: #333;
+    line-height: 24px;
+    text-decoration: none;
+    height: 24px;
+    width: 278px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: block;
+}
+/*.all-deals .bd .deals-list ul li .info a:hover{*/
+    /*color: #333;*/
+    /*font-weight: 700;*/
+    /*text-decoration: underline;*/
+/*}*/
+.all-deals .bd .deals-list ul li .info>p{
+    color: #665252;
+    height:12px;
+    line-height:12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 278px;
+    display:block;
+}

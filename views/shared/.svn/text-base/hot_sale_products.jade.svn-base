@@ -1,0 +1,33 @@
+div.popular(id="hot_sale")
+    div.title(id="hot_sale_title")
+        h3.
+            Popular Purchase
+        p.
+            Over the past 24 hours,updated in real-time.
+
+    div.article
+        div.left
+            a(title="Left").
+                Left
+        div.deals(id="hot_sale_body")
+            ul(id="hot_sale_list")
+                li.hid_template(name="hot_sale_item")
+                    div.pic
+                        a.lnk_hot_sale_item_image(href="#{contextPath}/inbuilding")
+                            img.hot_sale_item_image
+
+                    div.text
+                        a.cut.lnk_hot_sale_item_name(href="#{contextPath}/inbuilding",title="")
+                            p.hot_sale_item_name
+
+                        span
+                            |$
+                            em.hot_sale_item_price.in_line
+
+                    div.purchase
+                        a(title="Purchase Now",name="link_purchase_now").
+                            Purchase Now
+
+        div.right
+            a(title="Right").
+                Right

@@ -1,0 +1,131 @@
+extends ../layout
+
+block scripts
+    // add scripts
+    script(src="#{contextPath}/javascripts/product_page.js",language="javascript")
+    script(src="#{contextPath}/javascripts/point_calculator.js", language="javascript" ,type="text/javascript")
+
+block stylesheets
+    // add style sheets
+    link(href='#{contextPath}/stylesheets/product.css', rel='stylesheet', type='text/css')
+
+block content
+
+
+    input(type="hidden",id="page_product_id",name="page_product_id",value="#{product.id}")
+
+    //#parse("/include/header_v2.vm")
+    div.container
+        div.section
+            div.product
+                div(class="title cut",id="panel_website_path")
+                    div.website_path_line
+                        span.hid_template
+                            a(class="path_node in_line",href="#action")
+                            p(class="in_line path_arrow") >
+
+                div(class="detail cut",id="panel_product_basic_info")
+                    input(type="hidden" ,name="fb_share_title" ,value="")
+                    input(type="hidden" ,name="fb_share_summary" ,value="")
+                    input(type="hidden" ,name="fb_share_image" ,value="")
+                    div.information
+                        h2(name="panel_product_title")
+                            |    #{product.title}
+
+                        div(class="price cf")
+                            dl
+                                dt    Regular Price:$#{product.regularPrice}
+                                dd(name="lbl_market_price")
+                            dl
+                                dt    You Pay:
+                                dd
+                                    span(name="now_price")  $#{product.nowPrice}
+                            dl
+                                dt  Discount:
+                                dd(name="discount")
+
+                         div(class="description cut" ,name="description")   #{product.description}
+                         div(class="restrictions cut")
+                            p
+                                b   Restrictions
+                                span(name="restrictions")
+
+                         div.share
+                                p
+                                    b   Like this item?
+                                    |   Share it with friends
+                                #parse("/include/share.vm")
+
+                    div.pic
+                        div(class="store-logo")
+                            a(href="#{contextPath}/store/#{product.storeId}" ,name="lnk_below_store")
+                                img(name="store_icon",src="#{product.storeLogo}")
+                        div(class="product-picture")
+                            a(href="#Action")
+                                img(name="major_image",src="#{product.majorImage}")
+                    div.action
+                        div.buy-point
+                            h4  Earn 10 Points per $1 Spent
+                            div(class="counts")
+                                div(class="add-count")
+                                    a.minus    -
+                                    input(type="hidden" ,name="hid_stocks" ,value="999")
+                                    input(type="text" ,value="1" ,name="product_count" ,id="product_count")
+                                    a.plus  +
+                                div(class="now")
+                                    a.add( id='add_to_cart', href='/cart/list') Add Cart
+                            div.points
+                                p   Discount A/V allows you to
+                                    br
+                                    a(href="#Action")   Pay with Points
+                            div.benefits
+                                dl
+                                    dt   Points Benefits
+                                    dd   - Earn Points on this purchase
+                                    dd   - 10 Points = $1.00 USD
+                                    dd   - No expiration or blackout dates
+                                    dd   - Spend Points for free stuff
+
+                        div.calculator
+                            h4   Points Calculator
+                            div.amount
+                                p   Amount Spent:
+                                div.amounter
+                                    input(type="hidden" ,name='points_cal_hid_sim_amount')
+                                    span.in_line
+                                        |$
+                                        em.in_line(name='points_cal_sim_amount')
+                                    div.points_amount_slider(name="points_cal_slider")
+                                div.resoult
+                                    p.p1   Calculated earnings:
+                                    input(type="hidden", name='points_cal_hid_cur_balance')
+                                    p.p2
+                                        span(name='points_cal_cur_balance')
+                                        |   Current Balance
+                                    input(type="hidden" ,name='points_cal_hid_deal_points_rate')
+                                    input(type="hidden" ,name='points_cal_hid_sim_plus_balance')
+                                    p.p3
+                                        span   +
+                                        span(name='points_cal_sim_plus_balance')
+                                        |   Points (@
+                                        em(name='points_cal_points_rate')   1
+                                        |   X)
+                                    input(type="hidden", name='points_cal_hid_sim_result_balance')
+                                    p.p4
+                                        span(name="points_cal_sim_result_balance")
+                                        |   New Balance
+
+        div.section
+            //#parse("/include/you_also_like.vm")
+
+        div.section
+            include ../shared/groupbuy_customer_reviewer
+
+
+    //#parse("/footer/footer_v2.vm")
+    include ../shared/add_product_box
+    //#parse("/include/messages_box.vm")
+
+
+
+

@@ -1,0 +1,87 @@
+/**
+ * Created by IntelliJ IDEA.
+ * User: alex_yin
+ * Date: 11/10/11
+ * Time: 3:48 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+    //=========================get shorten url=========================
+    function bitlyURL(longUrl){
+        var bitlyUrl = 'http://api.bitly.com/v3/shorten?login=insensei&apiKey=R_93a56506cbb5357646e0891992281910&longUrl=' + encodeURIComponent(longUrl) + '&format=txt';
+
+        var xmlRequest = new XMLHttpRequest();
+        xmlRequest.open("GET", bitlyUrl, false);
+        xmlRequest.send(null);
+
+        if(xmlRequest.status == 200){
+            if(xmlRequest.responseText.indexOf("\n") > 0){
+                return xmlRequest.responseText.substr(0, xmlRequest.responseText.length -1);
+            }
+            return  xmlRequest.responseText;
+        }else{
+            return longUrl;
+        }
+    }
+
+    //=========================twitter tweet=========================
+	function tw_tweet() {
+        var title = $('[name=fb_share_title]').val();
+        if(null != title && title.length > 100){
+           title = title.substr(0, 100);
+        }
+
+        var bitURL = bitlyURL(location.href);
+
+        window.open('https://twitter.com/share' +
+                '?original_referer=' + encodeURIComponent(bitURL)
+                + '&source=tweetbutton&text='+ encodeURIComponent(title)
+                + '&url=' + encodeURIComponent(bitURL),
+            'tweet','toolbar=0,status=0,width=626,height=436');
+
+        return false;
+	}
+
+    //=========================facebook share only=========================
+	function fb_share() {
+		var url=location.href;
+        var title = $('[name=fb_share_title]').val();
+        var summary = $('[name=fb_share_summary]').val();
+        if(null != summary && summary.length > 200){
+           summary = summary.substr(0, 200);
+        }
+        var image = $('[name=fb_share_image]').val();
+
+        window.open('http://www.facebook.com/sharer/sharer.php' +
+                '?s=100&p[title]=' + encodeURIComponent(title)+ '&p[summary]='+ encodeURIComponent(summary)
+                +'&p[url]='+encodeURIComponent(url)+'&p[images][0]='+encodeURIComponent(image),
+            'sharer','toolbar=0,status=0,width=626,height=436');
+
+        return false;
+	}
+
+
+    //=========================facebook share & count=========================
+    $(document).ready(function() {
+        $('[name=fb_share]').click(function(e) {
+            var url=location.href;
+            var title = $('[name=fb_share_title]').val();
+            var summary = $('[name=fb_share_summary]').val();
+            if(null != summary && summary.length > 200){
+               summary = summary.substr(0, 200);
+            }
+            var image = $('[name=fb_share_image]').val();
+
+            e.preventDefault();
+            FB.ui(
+            {
+                method: 'feed',
+                name: title,
+                link: url,
+                picture: image,
+                caption: title,
+                description: summary,
+                message: summary
+            }, function(response) {});
+        });
+    });

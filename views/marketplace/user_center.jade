@@ -1,0 +1,68 @@
+extends ../layout
+
+block stylesheets
+    link(href='#{contextPath}/stylesheets/user-center.css', rel='stylesheet', type='text/css')
+    link(href='#{contextPath}/stylesheets/groupbuy.css', rel='stylesheet', type='text/css')
+    link(href='#{contextPath}/stylesheets/groupbuy-center.css', rel='stylesheet', type='text/css')
+    link(href='#{contextPath}/stylesheets/user-profile.css', rel='stylesheet', type='text/css')
+    link(href='#{contextPath}/stylesheets/page.profileEdit.css', rel='stylesheet', type='text/css')
+
+block scripts
+    script(src="#{contextPath}/javascripts/page.profileEdit.js",language="javascript")
+
+block content
+    div.container
+        div.section.cf
+            div.oc
+                div.where
+                    a(href='#{contextPath}/inbuilding') Home
+                    >
+                    a(href='#{contextPath}/inbuilding') My Yagod
+                    >
+                    a(href='#{contextPath}/inbuilding') Buy
+                    >Order center
+        div.section
+            div.oc
+                div.oc-bd.cf
+                    div.oc-bd-l
+                        div.oc-bd-l-m1
+                            input#hid_sel_panel(type='hidden', name='hid_sel_panel', value="#{sel_panel}")
+                            ul
+                                li
+                                    h3 Summary
+                                li
+                                    -if(sel_panel == 'orderlist')
+                                        a.a1(href='#{contextPath}/usercenter/orderlist') &gt;&nbsp;Order List
+                                    -else if(sel_panel == 'groupbuy')
+                                        a(href='#{contextPath}/usercenter/orderlist') &gt;&nbsp;Order List
+                                    -else if(sel_panel == 'user_profile' || sel_panel == 'profileEdit')
+                                        a(href='#{contextPath}/usercenter/orderlist') &gt;&nbsp;Order List
+                                    -else
+
+                                li
+                                    -if(sel_panel == 'orderlist')
+                                        a(href='#{contextPath}/usercenter/user_profile') &gt;&nbsp;User Center
+                                    -else if(sel_panel == 'groupbuy')
+                                        a(href='#{contextPath}/usercenter/user_profile') &gt;&nbsp;User Center
+                                    -else if(sel_panel == 'user_profile' || sel_panel == 'profileEdit')
+                                        a.a1(href='#{contextPath}/usercenter/user_profile') &gt;&nbsp;User Center
+                                    -else
+
+                                li
+                                    -if(sel_panel == 'orderlist')
+                                        a(href='#{contextPath}/usercenter/groupbuy') &gt;&nbsp;Group Buy
+                                    -else if(sel_panel == 'groupbuy')
+                                        a.a1(href='#{contextPath}/usercenter/groupbuy') &gt;&nbsp;Group Buy
+                                    -else if(sel_panel == 'user_profile' || sel_panel == 'profileEdit')
+                                        a(href='#{contextPath}/usercenter/groupbuy') &gt;&nbsp;Group Buy
+                                    -else
+
+                    -if(sel_panel == 'orderlist')
+                        include ../shared/order_list
+                    -else if(sel_panel == 'groupbuy')
+                        include ../shared/groupbuy_center
+                    -else if(sel_panel == 'user_profile')
+                        include ../shared/user_profile
+                    -else if(sel_panel == 'profileEdit')
+                        include ../shared/profileEdit
+                    -else

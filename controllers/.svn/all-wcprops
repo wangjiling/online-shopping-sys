@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/yb_ecommerce/!svn/ver/1813/consumer-center-nodejs/trunk/controllers
+END
+search.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/yb_ecommerce/!svn/ver/1807/consumer-center-nodejs/trunk/controllers/search.js
+END
+signup.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/yb_ecommerce/!svn/ver/1764/consumer-center-nodejs/trunk/controllers/signup.js
+END
+index.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yb_ecommerce/!svn/ver/1805/consumer-center-nodejs/trunk/controllers/index.js
+END
+login.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yb_ecommerce/!svn/ver/1756/consumer-center-nodejs/trunk/controllers/login.js
+END
+cart.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/yb_ecommerce/!svn/ver/1779/consumer-center-nodejs/trunk/controllers/cart.js
+END
+antiSpiderLogin.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/yb_ecommerce/!svn/ver/1751/consumer-center-nodejs/trunk/controllers/antiSpiderLogin.js
+END
+order.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yb_ecommerce/!svn/ver/1792/consumer-center-nodejs/trunk/controllers/order.js
+END
+groupbuy.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yb_ecommerce/!svn/ver/1808/consumer-center-nodejs/trunk/controllers/groupbuy.js
+END
+store.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yb_ecommerce/!svn/ver/1813/consumer-center-nodejs/trunk/controllers/store.js
+END
+payment.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yb_ecommerce/!svn/ver/1763/consumer-center-nodejs/trunk/controllers/payment.js
+END
+userCenter.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/yb_ecommerce/!svn/ver/1782/consumer-center-nodejs/trunk/controllers/userCenter.js
+END
+product.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/yb_ecommerce/!svn/ver/1778/consumer-center-nodejs/trunk/controllers/product.js
+END

@@ -1,0 +1,138 @@
+extends ../layout
+
+block scripts
+    // add scripts
+  script(src='#{contextPath}/javascripts/order_detail_input_page.js')
+  script(type="text/javascript",language="JavaScript").
+      $(document).ready(function() {
+          loadState();
+      })
+
+
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/oder-detail-input.css')
+
+
+
+block content
+    div.container
+        div.section
+            div.step-thr.cf
+                div.step1 My Shopping Cart
+                div.step2.onhover Check  Out  Order
+                div.step3 Submit Successfully
+
+
+        div.section.cf
+            form(action="#{contextPath}/order/generate_order",id="form_order_detail",name="form_order_detail",method="post")
+                div.order
+                    div.order-t
+                        h2 Your Completed Order
+                    div.order-m.cf
+                        div.o-m
+                            div.o-m-hd
+                                h3 Shipping Address
+                            div.o-m-bd.m-bd1
+                                input(type="hidden",value="",name="address_id")
+                                p
+                                    span Name:
+                                    input.txt1(type="text",id="address_name",name="address_name")
+                                    span("nameMsg")
+                                p
+                                    span Address:
+                                    input.txt2(type="text",id="address_value",name="address_value")
+                                    span(id="addressMsg")
+                                p
+                                    span City:
+                                    input.txt2(type="text",id="city_value",name="city_value")
+                                    span(id="cityMsg")
+                                p
+                                    span State:
+                                    select.sl(id="state_select",name="state_select")
+                                        option.all_state(value="state") -Select-
+                                    span(id="stateMsg")
+                                p
+                                    span Post Code/Zip:
+                                    input.txt1(type="text",id="zip_code",name="zip_code")
+                                    span(id="zipMsg")
+                                p
+                                    span Telephone:
+                                    input.txt3(type="text",id="tel_number",name="tel_number")
+                                    span(id="mobilePhoneMsg")
+
+
+
+                        div.o-m
+                            div.o-m-hd
+                                h3 Payment
+                            div.o-m-bd.m-bd2
+                                p
+                                    input(type="hidden",value="",name="payment_id")
+                                    input(type="radio",value="paypal",name="payment_type",checked="true")
+                                    span PayPal
+                                    a(href="${context-path}/inbuilding")
+                                        img(src="#{contextPath}/pics/23.jpg")
+                        div.o-m
+                            div.o-m-hd
+                                h3 Item list
+                            div.o-m-bd.m-bd3
+                                table(cellpadding="0",cellspacing="0")
+                                    thead
+                                        tr
+                                            th Deal
+                                            th Price
+                                            th Quantity
+                                    input(type="hidden",value="#{checkOutList.shoppingCartId}",name="shopping_cart_id")
+                                    each cartStoreList in checkOutList.stores
+                                        each cartGoods in cartStoreList.goodsList
+                                            tbody
+                                                tr
+                                                    td.td1
+                                                        input(type="hidden",name="shopping_items_ids",value="#{cartGoods.shoppingItemId}")
+                                                        input(type="hidden",name="products_ids",value="#{cartGoods.productId}")
+                                                        input(type="hidden",name="shopping_items_count",value="#{cartGoods.count}")
+                                                        div.m-img
+                                                            a(href="#{contextPath}/product?product_id="#{cartGoods.productId}")
+                                                                img(alt="#{cartGoods.productName}",src="#{cartGoods.productImage}")
+                                                        div.m-txt
+                                                            a(title="#{cartGoods.productName}",href="#{contextPath}/product?product_id=#{cartGoods.productId}")
+                                                                #{cartGoods.productName}
+                                                            p
+                                                                #{cartGoods.productSummary}
+                                                    td.td2
+                                                        span $
+                                                            p.in_line
+                                                                #{cartGoods.nowPrice}
+                                                    td.td2
+                                                        #{cartGoods.count}
+
+                        div.o-m
+                            div.o-m-hd
+                                h3 Your Order
+                            div.o-m-bd.m-bd4
+                                - var totalPayPrice = parseFloat(checkOutList.totalNowPrice) + parseFloat(checkOutList.totalShippingPrice)
+                                input(type="hidden",name="total_items_price",value="#{checkOutList.totalNowPrice}")
+                                input(type="hidden",name="total_shipping_price",value="#{checkOutList.totalShippingPrice}")
+                                input(type="hidden",name="total_pay_price",value="#{totalPayPrice}")
+                                p
+                                    span Item Total:
+                                    em
+                                        #{checkOutList.totalNowPrice}
+                                    |USD
+                                p
+                                    span Shipping:
+                                    em
+                                        #{checkOutList.totalShippingPrice}
+                                    |USD
+                                p Your Total Payment:
+                                    em.em1
+                                        em #{totalPayPrice}
+                                        USD
+
+                        div.o-m.m-bt
+                            input(type="hidden",id="country_value",name="country_value",value="US")
+                            input.bt-submit(type="submit",id="btn_order_info",value="Submit")
+
+                    div.order-b

@@ -1,0 +1,22 @@
+extends layout
+
+block scripts
+    // add scripts
+    script(language="javascript", type="text/javascript", src="#{contextPath}/javascripts/highcharts.js")
+    script(src="#{contextPath}/javascripts/home_page.js",language="javascript")
+    script(src="#{contextPath}/javascripts/remain.js",language="javascript")
+    script(src="#{contextPath}/javascripts/you_also_like_roll.js",language="javascript")
+
+block stylesheets
+    // add style sheets
+    link(rel='stylesheet', href='#{contextPath}/stylesheets/home.css')
+
+block content
+    div.container
+        div.section
+            include shared/top_recommend_deal
+        div.section
+            include shared/featured_products
+        div.section
+            include shared/hot_sale_products
+

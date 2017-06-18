@@ -1,0 +1,12 @@
+// Product bean fields defines.
+
+exports.product = function(){
+    this.id = 0;
+    this.title = "";
+    this.regularPrice = 0.00;
+    this.nowPrice = 0.00;
+    this.description= "";
+    this.majorImage= "";
+    this.storeId= 0;
+    this.storeLogo= "";
+}

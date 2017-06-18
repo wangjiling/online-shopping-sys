@@ -1,0 +1,49 @@
+div#fb-root
+
+script(type='text/javascript').
+  FB.init({
+    appId      : '$!{fbApiKey}',
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    oauth      : true, // enable OAuth 2.0
+    xfbml      : true  // parse XFBML
+  });
+
+script(type='text/javascript').
+    function login_with_fb(){
+        FB.login(function(response) {
+            if (response.authResponse) {
+                var userId = response.authResponse.userID;
+                $('[name=fb_uid]').val(userId);
+                $('[name=fb_access_token]').val(response.authResponse.accessToken);
+                $('[name=fb_expires]').val(response.authResponse.expiresIn);
+                $('[name=fb_signed]').val(response.authResponse.signedRequest);
+
+                //get user object
+                FB.api(userId, function(responseUserObj) {
+                    $('[name=fb_name]').val(responseUserObj.name);
+                    $('[name=fb_email]').val(responseUserObj.email);
+                    $('[name=fb_first_name]').val(responseUserObj.first_name);
+                    $('[name=fb_last_name]').val(responseUserObj.last_name);
+                    $('[name=fb_gender]').val(responseUserObj.gender);
+
+                    $('[name=FBLoginForm]').submit();
+                });
+
+            } else {
+                alert("Please login to facebook");
+            }
+        }, {scope:'email,read_stream,publish_stream,offline_access'});
+    }
+
+form#FBLoginForm(method='post', name='FBLoginForm', action='#{contextPath}/fb/login')
+    div.fb-login-button(onlogin='login_with_fb()') Login with Facebook
+    input#fb_name(name='fb_name', value='', type='hidden')
+    input#fb_uid(name='fb_uid', value='', type='hidden')
+    input#fb_email(name='fb_email', value='', type='hidden')
+    input#fb_access_token(name='fb_access_token', value='', type='hidden')
+    input#fb_expires(name='fb_expires', value='', type='hidden')
+    input#fb_signed(name='fb_signed', value='', type='hidden')
+    input#fb_first_name(name='fb_first_name', value='', type='hidden')
+    input#fb_last_name(name='fb_last_name', value='', type='hidden')
+    input#fb_gender(name='fb_gender', value='', type='hidden')
